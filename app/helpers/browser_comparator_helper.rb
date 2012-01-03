@@ -1,0 +1,2 @@
+module BrowserComparatorHelper
+end
