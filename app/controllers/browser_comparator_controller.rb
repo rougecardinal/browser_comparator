@@ -1,4 +1,5 @@
 class BrowserComparatorController < ApplicationController
+
   def index
   end
 
