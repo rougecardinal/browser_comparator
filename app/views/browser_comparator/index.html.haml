@@ -5,11 +5,10 @@
     %table#tab_browsers
       %tr.browsers
         %th
-        %th.current_browser IE
-        %th IE
-        %th Chrome
-        %th Firefox
-        %th Opera
+        %th.current_browser IE (current Browser)
+        - @browsers.each do |browser|
+          %th 
+            = browser.name
       %tr
         %th Version
         %td.current_browser 7
