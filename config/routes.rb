@@ -1,4 +1,4 @@
-Browser::Application.routes.draw do
+BrowserComparator::Application.routes.draw do
   get "browser_comparator/index"
 
   # The priority is based upon order of creation:

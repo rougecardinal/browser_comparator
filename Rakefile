@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Browser::Application.load_tasks
+BrowserComparator::Application.load_tasks
