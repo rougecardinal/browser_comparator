@@ -1,42 +1,75 @@
 <html>
 	<head>
 		<title>Intro</title>
+		<style type="text/css">
+
+		#tab_browsers{
+			border:1px;	
+			text-align:center;
+		}
+		.browsers{
+			color: black;	
+		}
+		
+		.current_nav{
+			background-color: silver;
+			padding-left:10px;
+			padding-right:10px;
+		}	
+
+		</style>
 	</head>
-	<style type="text/css">
 	
-	/* CSS */
-	
-	</style>
 	<body>
-		<h4> Votre navigateur est :</h4><h3> Exemple Safari </h3>
 		<table id="tab_browsers">
 			<tr class="browsers">
 				<th>  </th>
+				<th class="current_nav" > IE (votre navigateur) </th>
 				<th> IE </th>
 				<th> Chrome </th>
 				<th> Firefox </th>
 				<th> Opera </th>
 			</tr>
 			<tr>
+				<th> Version </th>
+				<td class="current_nav"> 7 </td>
+				<td> 9 </td>
+				<td> 12.3 </td>
+				<td> 16.4 </td>
+				<td> 6 </td>
+			</tr>
+			<tr>
+				<th> Dernière MAJ </th>
+				<td class="current_nav"> 12/08/09 </td>
+				<td> 01/01/12 </td>
+				<td> 05/09/11 </td>
+				<td> 08/10/11 </td>
+				<td> 07/07/07 </td>
+			</tr>			
+			<tr>
 				<th> MàJ Auto </th>
-				<td> Non </td>
+				<td class="current_nav"> Non </td>
+				<td> Oui </td>
 				<td> Oui </td>
 				<td> Oui </td>
 				<td> Oui après authorisation </td>
 			</tr>
+
 			<tr>
 				<th> Barre URL intelligente</th>
-				<td> Non </td>
+				<td class="current_nav"> Non </td>
 				<td> Oui </td>
 				<td> Non </td>
+				<td> Oui </td>
 				<td> Oui </td>
 			</tr>	
 			<tr>
 				<th> Géolocalisation</th>
-				<td> Non </td>
+				<td class="current_nav"> Non </td>
 				<td> Oui </td>
 				<td> Oui </td>
 				<td> Non </td>
+				<td> Oui </td>
 			</tr>
 		</table>
 	</body>
