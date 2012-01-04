@@ -8,7 +8,7 @@
 
 
 browser_families_attributes = [
-  {:name => "Firefox", :prod_society => "Mozilla"},
+  {:name => "Firefox", :prod_society => "Mozilla"}, 
   {:name => "Google Chrome", :prod_society => "Google"},
   {:name => "Internet Explorer", :prod_society => "Microsoft"},
   {:name => "Safari", :prod_society => "Apple"},
@@ -20,5 +20,8 @@ browser_families_attributes.each do |attributes|
   BrowserFamily.find_or_create_by_name(attributes)
 end
 
+category_names = ["Aide/Support", "Securite", "Configuration", "Divers" ]
 
-
+category_names.each do |name|
+  Category.find_or_create_by_name(name: name)
+end
