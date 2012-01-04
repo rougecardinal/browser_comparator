@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104101414) do
+ActiveRecord::Schema.define(:version => 20120104141557) do
 
   create_table "browser_families", :force => true do |t|
     t.string   "name"
     t.string   "prod_society"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rating"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
