@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20120104141557) do
   create_table "browser_families", :force => true do |t|
     t.string   "name"
     t.string   "prod_society"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rating"
   end
 
   create_table "categories", :force => true do |t|
@@ -29,12 +29,15 @@ ActiveRecord::Schema.define(:version => 20120104141557) do
 
   create_table "feature_versions", :force => true do |t|
     t.string   "value"
+    t.integer  "feature_id"
+    t.integer  "version_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "features", :force => true do |t|
     t.string   "name"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120104141557) do
     t.string   "name"
     t.date     "date_opening"
     t.string   "description"
+    t.integer  "browser_family_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

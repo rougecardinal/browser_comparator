@@ -3,6 +3,7 @@ class CreateBrowserFamilies < ActiveRecord::Migration
     create_table :browser_families do |t|
       t.string :name
       t.string :prod_society
+      t.integer :rating
 
       t.timestamps
     end
