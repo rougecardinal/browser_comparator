@@ -1,13 +1,13 @@
 %html
   %head
-    %title Intro
+    %title Browser comparator
   %body
     %table#tab_browsers
       %tr.browsers
         %th
         %th.current_browser IE (current Browser)
         - @browsers.each do |browser|
-          %th 
+          %th
             = browser.name
       %tr
         %th Version
@@ -43,4 +43,4 @@
         %td Non
         %td Oui
         %td Oui après authorisation
-        %td Oui 
+        %td Oui
