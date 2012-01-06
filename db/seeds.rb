@@ -56,11 +56,16 @@ puts "Association des versions et des os"
 chrome = BrowserFamily.find_by_name("Google Chrome")
 linux = Os.find_by_name("Linux Ubuntu")
 chrome_v16 = chrome.versions.find_by_name("v16")
+chrome_v15 = chrome.versions.find_by_name("v15")
+
+chrome_v15.os_versions.create(os: linux)
 chrome_v16.os_versions.create(os: linux)
 
 puts "mon navigateur est : #{chrome.name}"
 puts "mon os est : #{linux.name}"
-puts "ma version  est : #{chrome_v16.name}"
+puts "ma version 1  est : #{chrome_v15.name}"
+puts "ma version 2  est : #{chrome_v16.name}"
+puts "dernier os ajouté à chrome_v15 #{chrome_v15.os_versions.last.os.name}"
 puts "dernier os ajouté à chrome_v16 #{chrome_v16.os_versions.last.os.name}"
 
 # [{"Safari" => v5}, {"Safari" => v4}, {"Firefox" => v9}, {"Firefox" => v8}, {"Google Chrome" => v16}, {"Google Chrome" => v15}, {"Internet Explorer" => v9}, {"Internet Explorer" => v8}, {"Opera" => v11}, {"Opera" => v10}]
