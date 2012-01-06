@@ -57,6 +57,7 @@ chrome = BrowserFamily.find_by_name("Google Chrome")
 linux = Os.find_by_name("Linux Ubuntu")
 
 puts "mon navigateur est : #{chrome.name}"
+puts "mon os est : #{linux.name}"
 # [{"Safari" => v5}, {"Safari" => v4}, {"Firefox" => v9}, {"Firefox" => v8}, {"Google Chrome" => v16}, {"Google Chrome" => v15}, {"Internet Explorer" => v9}, {"Internet Explorer" => v8}, {"Opera" => v11}, {"Opera" => v10}]
 
 # os_versions = {
