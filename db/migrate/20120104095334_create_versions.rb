@@ -4,7 +4,6 @@ class CreateVersions < ActiveRecord::Migration
       t.string :name
       t.date :date_opening
       t.string :description
-      t.integer :family
       t.integer :browser_family_id
 
       t.timestamps

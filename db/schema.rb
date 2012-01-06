@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20120106090010) do
     t.string   "name"
     t.date     "date_opening"
     t.string   "description"
-    t.integer  "family"
     t.integer  "browser_family_id"
     t.datetime "created_at"
     t.datetime "updated_at"
