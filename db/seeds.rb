@@ -54,15 +54,19 @@ end
 puts "Association des versions et des os"
 
 chrome = BrowserFamily.find_by_name("Google Chrome")
+safari = BrowserFamily.find_by_name("Safari")
 linux = Os.find_by_name("Linux Ubuntu")
 
-chrome_releases = ["v15", "v16"]
+versions_in_browsers = {"Google Chrome" => "v16", "Safari" => "v5"}
+version_chrome = versions_in_browsers["Google Chrome"]
+version_safari = versions_in_browsers["Safari"]
+#chrome_releases = ["v15", "v16"]
 
-chrome_releases.each do |version|
-  chrome_version = chrome.versions.find_by_name(version)
-  chrome_version.os_versions.create(os: linux)
-  puts "ma version est : #{chrome_version.name}"
-end
+# chrome_releases.each do |version|
+#   chrome_version = chrome.versions.find_by_name(version)
+#   chrome_version.os_versions.create(os: linux)
+#  # puts "ma version est : #{chrome_version.name}"
+# end
 
 #chrome_v16 = chrome.versions.find_by_name("v16")
 #chrome_v15 = chrome.versions.find_by_name("v15")
@@ -72,7 +76,8 @@ end
 
 puts "mon navigateur est : #{chrome.name}"
 puts "mon os est : #{linux.name}"
-
+puts "ma version de chrome est : #{version_chrome}"
+puts "ma version de safari est : #{version_safari}"
 # puts "ma version 1  est : #{chrome_v15.name}"
 # puts "ma version 2  est : #{chrome_v16.name}"
 
