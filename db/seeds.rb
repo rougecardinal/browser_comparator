@@ -27,11 +27,11 @@ end
 
 #VERSIONS.
 browsers_versions = {
-  "Safari" => [{name: "v5.1.2", date_opening: "2009/11/29", family: '5', description: "Dernière version Mac OS X"}, {name: "v5.1.1", date_opening: "2011/10/12",family: '5', description: "Avant dernière version Mac OS X"}],
-  "Firefox" => [{name: "v9.0.1", date_opening: "2011/12/11",family: '9', description: "Dernière version Firefox"}, {name: "v8.0", date_opening: "2011/11/08",family: '8', description: "Avant dernière version Firefox"}],
-  "Google Chrome" => [{name: "v16.0.912.63", date_opening: "2011/12/13", family: '16', description: "Dernière version Google Chrome."}, {name: "v15.0.874", date_opening: "2011/10/27", family: '15', description: "Avant dernière version Google Chrome."}],
-  "Internet Explorer" => [{name: "v9.0.4", date_opening: "2011/12/22", family: '9', description: "Dernière version Internet Explorer."}, {name: "v8.0", date_opening: "2009/03/19", family: '8', description: "Avant dernière version Internet Explorer."}],
-  "Opera" => [{name: "v11.60", date_opening: "2011/12/06", family: '11', description: "Dernière version Opera."}, {name: "v11.50", date_opening: "2011/06/28", family: '11', description: "Avant dernière version Opera."}]
+  "Safari" => [{name: "v5", date_opening: "2009/11/29", description: "Dernière version Mac OS X"}, {name: "v4", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
+  "Firefox" => [{name: "v9", date_opening: "2011/12/11", description: "Dernière version Firefox"}, {name: "v8", date_opening: "2011/11/08", description: "Avant dernière version Firefox"}],
+  "Google Chrome" => [{name: "v16", date_opening: "2011/12/13", description: "Dernière version Google Chrome."}, {name: "v15", date_opening: "2011/10/27", description: "Avant dernière version Google Chrome."}],
+  "Internet Explorer" => [{name: "v9", date_opening: "2011/12/22", description: "Dernière version Internet Explorer."}, {name: "v8", date_opening: "2009/03/19", description: "Avant dernière version Internet Explorer."}],
+  "Opera" => [{name: "v11", date_opening: "2011/12/06", description: "Dernière version Opera."}, {name: "v10", date_opening: "2011/06/28", description: "Avant dernière version Opera."}]
 }
 
 browsers_versions.each do |browser_name, versions_attributes|
@@ -42,7 +42,6 @@ browsers_versions.each do |browser_name, versions_attributes|
   end
 end
 
-
 #OS.
 os_names = [ "Windows 7", "Windows Vista", "Windows XP", "Mac OS Lion", "Mac OS Snow Leopard", "Mac OS Leopard", "Linux Ubuntu", "Linux Autres"]
     
@@ -50,14 +49,24 @@ os_names.each do |attribute|
   Os.find_or_create_by_name(attribute)
 end
 
-#OS VERSION
+#OS VERSION.
 
-def version_id(name)
-  Version.find_by_name(name).id
-end
+puts "Association des versions et des os"
 
-def os_id(name)
-  Os.find_by_name(name).id
-end
+chrome = BrowserFamily.find_by_name("Google Chrome")
+linux = Os.find_by_name("Linux Ubuntu")
 
+puts "mon navigateur est : #{chrome.name}"
+# [{"Safari" => v5}, {"Safari" => v4}, {"Firefox" => v9}, {"Firefox" => v8}, {"Google Chrome" => v16}, {"Google Chrome" => v15}, {"Internet Explorer" => v9}, {"Internet Explorer" => v8}, {"Opera" => v11}, {"Opera" => v10}]
 
+# os_versions = {
+#   "Windows 7" => [{"Safari" => v5}, {"Safari" => v4}, {"Firefox" => v9}, {"Firefox" => v8}, {"Google Chrome" => v16}, {"Google Chrome" => v15}, {"Internet Explorer" => v9}, {"Internet Explorer" => v8}, {"Opera" => v11}, {"Opera" => v10}],
+# }
+# 
+# browsers_versions.each do |browser_name, versions_attributes|
+#   browser = BrowserFamily.find_by_name(browser_name)
+#   versions_attributes.each do |version_attributes|
+#     version_attributes.merge!(browser_family_id: browser.id)
+#     Version.find_or_create_by_name_and_browser_family_id(version_attributes)
+#   end
+# end
