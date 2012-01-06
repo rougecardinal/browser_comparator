@@ -58,8 +58,13 @@ safari = BrowserFamily.find_by_name("Safari")
 linux = Os.find_by_name("Linux Ubuntu")
 
 versions_in_browsers = {"Google Chrome" => "v16", "Safari" => "v5"}
-version_chrome = versions_in_browsers["Google Chrome"]
-version_safari = versions_in_browsers["Safari"]
+# version_chrome = versions_in_browsers["Google Chrome"]
+# version_safari = versions_in_browsers["Safari"]
+
+versions_in_browsers.each do |key, value|
+  puts "key : #{key}, value #{value}" #Ca fonctionne aussi comme ca
+end
+
 #chrome_releases = ["v15", "v16"]
 
 # chrome_releases.each do |version|
