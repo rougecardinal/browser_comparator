@@ -8,7 +8,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+# BROWSERS.
 browser_families_attributes = [
   {name: "Firefox", prod_society: "Mozilla"},
   {name: "Google Chrome", prod_society: "Google"},
@@ -25,6 +25,7 @@ category_names.each do |name|
   Category.find_or_create_by_name(name: name)
 end
 
+#VERSIONS.
 browsers_versions = {
   "Safari" => [{name: "v5.1.2", date_opening: "2009/11/29", description: "Dernière version Mac OS X"}, {name: "v5.1.1", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
   "Firefox" => [{name: "v9.0.1", date_opening: "2011/12/11", description: "Dernière version Firefox"}, {name: "v8.0", date_opening: "2011/11/08", description: "Avant dernière version Firefox"}],
@@ -40,3 +41,12 @@ browsers_versions.each do |browser_name, versions_attributes|
     Version.find_or_create_by_name_and_browser_family_id(version_attributes)
   end
 end
+
+
+#OS.
+os_names = [ "Windows 7", "Windows Vista", "Windows XP", "Mac OS Lion", "Mac OS Snow Leopard", "Mac OS Leopard", "Linux Ubuntu", "Linux Autres"]
+    
+os_names.each do |attribute|
+  Os.find_or_create_by_name(attribute)
+end
+
