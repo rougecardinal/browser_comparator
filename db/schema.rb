@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104141557) do
+ActiveRecord::Schema.define(:version => 20120106090010) do
 
   create_table "browser_families", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(:version => 20120104141557) do
   create_table "features", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "os", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "os_versions", :force => true do |t|
+    t.integer  "os_id"
+    t.integer  "version_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

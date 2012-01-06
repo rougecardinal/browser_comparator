@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  os_id: 1
+  version_id: 1
+
+two:
+  os_id: 1
+  version_id: 1
