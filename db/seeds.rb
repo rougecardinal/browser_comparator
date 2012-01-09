@@ -9,6 +9,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # BROWSERS.
+###########
+
 # Tableau de hashs avec les attributs de BrowserFamily
 browser_families_attributes = [
   {name: "Firefox", prod_society: "Mozilla"},
@@ -23,12 +25,9 @@ browser_families_attributes.each do |attributes|
   BrowserFamily.find_or_create_by_name(attributes)
 end
 
-category_names = ["Aide/Support", "Securite", "Configuration", "Divers" ]
-category_names.each do |name|
-  Category.find_or_create_by_name(name: name)
-end
-
 #VERSIONS.
+##########
+
 #Tableau de hashs.
 browsers_versions = {
   "Safari" => [{name: "5", date_opening: " 2009/11/29", description: "Dernière version Mac OS X"}, {name: "4", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
@@ -49,6 +48,8 @@ browsers_versions.each do |browser_name, versions_attributes|
 end
 
 #OS.
+###
+
 os_names = [ 
   "Windows 7", "Windows Vista", "Windows XP",
   "Mac OS Lion", "Mac OS Snow Leopard", "Mac OS Leopard",
@@ -58,6 +59,8 @@ os_names.each do |attribute|
 end
 
 #OS VERSION.
+###########
+
 versions_in_browsers = {
   "Windows 7" => {
     "Google Chrome" => ["16", "15"], "Safari" => ["5", "4"]
@@ -77,4 +80,22 @@ versions_in_browsers.each do |os, values|
       OsVersion.find_or_create_by_version_id(version_id: Version.find_by_name(version).id, os_id: Os.find_by_name(os).id  )  
     end
   end    
+end
+
+# FEATURE.
+#########
+
+features = {
+  "Aide/Support" => ["Support e-Mail", "Aide en ligne", "Tutoriels", "FAQs", "Docs/Guide", "Support Téléphonique"],
+  "Securite" => ["Controle parental", "Anti-Spyware", "Blocage Pop-up", "Anti-Virus", "Navigation en mode Privé", "Historique de navigation"], 
+  "Divers" => ["Géolocalisation", "Barre URL intelligente", "Mise à jour automatique", "Integration d'un moteur de recherche", "Sauvegarde d'onglets", 
+               "Modification du thème", "Flux RSS", "Gestionnaire de Mot de passe", "Zoom sur la page", "Add-on", "Développement Open Source", 
+               "Gestionnaire de téléchargements", "Syncronisation mobile", "Interaction vocale"]
+} 
+
+features.each do |category_name, features_name|
+  category = Category.find_or_create_by_name(name: category_name)
+  features_name.each do |feature_name|
+    Feature.find_or_create_by_name(name: feature_name, category_id: category.id)
+  end
 end
