@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120106090010) do
   end
 
   create_table "versions", :force => true do |t|
-    t.string   "name"
+    t.integer  "name"
     t.date     "date_opening"
     t.string   "description"
     t.integer  "browser_family_id"
