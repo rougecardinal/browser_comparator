@@ -57,8 +57,7 @@ ActiveRecord::Schema.define(:version => 20120106090010) do
 
   create_table "versions", :force => true do |t|
     t.integer  "name"
-    t.date     "date_opening"
-    t.string   "description"
+    t.date     "date_release"
     t.integer  "browser_family_id"
     t.datetime "created_at"
     t.datetime "updated_at"
