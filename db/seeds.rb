@@ -30,7 +30,7 @@ end
 
 #Tableau de hashs.
 browsers_versions = {
-  "Safari" => [{name: "5", date_opening: " 2009/11/29", description: "Dernière version Mac OS X"}, {name: "4", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
+  "Safari" => [{name: "5", date_opening: "2009/11/29", description: "Dernière version Mac OS X"}, {name: "4", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
   "Firefox" => [{name: "9", date_opening: "2011/12/11", description: "Dernière version Firefox"}, {name: "8", date_opening: "2011/11/08", description: "Avant dernière version Firefox"}],
   "Google Chrome" => [{name: "16", date_opening: "2011/12/13", description: "Dernière version Google Chrome."}, {name: "15", date_opening: "2011/10/27", description: "Avant dernière version Google Chrome."}],
   "Internet Explorer" => [{name: "9", date_opening: "2011/12/22", description: "Dernière version Internet Explorer."}, {name: "8", date_opening: "2009/03/19", description: "Avant dernière version Internet Explorer."}],
@@ -61,26 +61,23 @@ end
 #OS VERSION.
 ###########
 
-versions_in_browsers = {
-  "Windows 7" => {
-    "Google Chrome" => ["16", "15"], "Safari" => ["5", "4"]
-  },
-  "Mac OS Lion" => {
-    "Firefox" => ["16", "15"], "Safari" => ["5", "4"]
-  }
-}
-
-#La fonction retourne les browsers et leurs versions en fonction de l'OS 
+versions_in_browsers = {"Windows 7" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Windows Vista" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Windows XP" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8], "Opera" => [8,9]},
+                       "Mac OS Lion" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Mac OS Snow Leopard" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Mac OS Leopard" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Linux Ubuntu" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]},
+                       "Linux Autres" => {"Google Chrome" => [15,16], "Safari" => [4,5], "Firefox" => [8,9], "Internet Explorer" => [8,9], "Opera" => [8,9]}}
 versions_in_browsers.each do |os, values|
-  #puts " - key : #{os}, values : #{values}"
   values.each do |browser, versions|
-    #puts "-- key #{browser}, val : #{versions}" 
-    versions.each do |version|
-      #puts "--- Os :#{os} => Browser : #{browser} => Version : #{version}"
-      OsVersion.find_or_create_by_version_id(version_id: Version.find_by_name(version).id, os_id: Os.find_by_name(os).id  )  
+    versions[0..1].each_with_index do |version_number, index|
+       os_version = OsVersion.create(version_id: Version.find_by_name(version_number).id, os_id: Os.find_by_name(os).id)  
+        puts "#{index} ...........  #{version_number}......... #{os_version}"
     end
-  end    
+  end
 end
+
 
 # FEATURE.
 #########
@@ -99,3 +96,7 @@ features.each do |category_name, features_name|
     Feature.find_or_create_by_name(name: feature_name, category_id: category.id)
   end
 end
+
+#FEATURE VERSION.
+################
+
