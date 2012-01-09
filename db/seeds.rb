@@ -8,6 +8,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 # BROWSERS.
 ###########
 
@@ -30,11 +31,58 @@ end
 
 #Tableau de hashs.
 browsers_versions = {
-  "Safari" => [{name: "5", date_opening: "2009/11/29", description: "Dernière version Mac OS X"}, {name: "4", date_opening: "2011/10/12", description: "Avant dernière version Mac OS X"}],
-  "Firefox" => [{name: "9", date_opening: "2011/12/11", description: "Dernière version Firefox"}, {name: "8", date_opening: "2011/11/08", description: "Avant dernière version Firefox"}],
-  "Google Chrome" => [{name: "16", date_opening: "2011/12/13", description: "Dernière version Google Chrome."}, {name: "15", date_opening: "2011/10/27", description: "Avant dernière version Google Chrome."}],
-  "Internet Explorer" => [{name: "9", date_opening: "2011/12/22", description: "Dernière version Internet Explorer."}, {name: "8", date_opening: "2009/03/19", description: "Avant dernière version Internet Explorer."}],
-  "Opera" => [{name: "11", date_opening: "2011/12/06", description: "Dernière version Opera."}, {name: "10", date_opening: "2011/06/28", description: "Avant dernière version Opera."}]
+  "Safari" => [{name: "5", date_release: "2010/06/20"},
+               {name: "4", date_release: "2009/11/11"},
+               {name: "3", date_release: "2008/11/13"},
+               {name: "2", date_release: "2006/01/10"},
+               {name: "1", date_release: "2003/10/24"}],
+  "Firefox" => [{name: "9", date_release: "2011/12/20"},
+                {name: "8", date_release: "2011/11/08"},
+                {name: "7", date_release: "2011/09/27"},
+                {name: "6", date_release: "2011/08/16"},
+                {name: "5", date_release: "2011/06/21"},
+                {name: "4", date_release: "2011/03/22"},
+                {name: "3", date_release: "2008/06/17"},
+                {name: "2", date_release: "2006/10/24"},
+                {name: "1", date_release: "2004/11/09"},
+                {name: "0", date_release: "2004/02/09"}],
+  "Google Chrome" => [{name: "16", date_release: "2011/12/13"},
+                      {name: "15", date_release: "2011/10/25"},
+                      {name: "14", date_release: "2011/09/16"},
+                      {name: "13", date_release: "2011/08/02"},
+                      {name: "12", date_release: "2011/06/07"},
+                      {name: "11", date_release: "2011/04/27"},
+                      {name: "10", date_release: "2011/03/08"},
+                      {name: "9", date_release: "2011/02/03"},
+                      {name: "8", date_release: "2010/12/02"},
+                      {name: "7", date_release: "2010/10/21"},
+                      {name: "6", date_release: "2010/09/02"},
+                      {name: "5", date_release: "2010/05/21"},
+                      {name: "4", date_release: "2010/01/25"},
+                      {name: "3", date_release: "2009/10/12"},
+                      {name: "2", date_release: "2009/05/24"},
+                      {name: "1", date_release: "2008/12/11"},
+                      {name: "0", date_release: "2008/09/02"}],
+  "Internet Explorer" => [{name: "9", date_release: "2011/03/14"},
+                          {name: "8", date_release: "2009/03/19"},
+                          {name: "7", date_release: "2006/10/18"},
+                          {name: "6", date_release: "2001/08/27"},
+                          {name: "5", date_release: "1999/03/18"},
+                          {name: "4", date_release: "1997/09/01"},
+                          {name: "3", date_release: "1996/08/13"},
+                          {name: "2", date_release: "1995/11/22"},
+                          {name: "1", date_release: "1995/08/16"}],
+  "Opera" => [{name: "11", date_release: "2010/12/16"},
+              {name: "10", date_release: "2009/09/01"},
+              {name: "9", date_release: "2006/06/20"},
+              {name: "8", date_release: "2005/04/19"},
+              {name: "7", date_release: "2003/01/28"},
+              {name: "6", date_release: "2001/12/18"},
+              {name: "5", date_release: "2000/12/06"},
+              {name: "4", date_release: "2000/06/28"},
+              {name: "3", date_release: "1997/12/01"},
+              {name: "2", date_release: "1996/04/22"},
+              {name: "1", date_release: "1995/04/12"}]
 }
 
 #Parcours du hash avec les deux attributs Browser_name et Versions_attributes.
