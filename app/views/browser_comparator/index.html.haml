@@ -22,7 +22,20 @@
         - @browsers.each do |browser|
           %td
             = browser.versions.last.date_release
-    %table#tab_features
-      %th 
-        = FeatureVersion.find_by_version_id_and_feature_id(1,4).feature.name
-
+      
+      - @features.each do |feature|
+        %tr
+          %th  
+            = feature.name
+          %td.current_browser
+            Oui/Non
+          %td
+            firefox
+          %td
+            Chrome
+          %td
+            IE
+          %td
+            Safari
+          %td
+            Opera
