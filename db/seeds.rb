@@ -21,7 +21,7 @@ browser_families_attributes = [
   {name: "Opera", prod_society: "Opera Software"}
 ]
 
-# Parcours du tableau et création du browser s'il n'existe pas
+# Parcours du tableau et creation du browser s'il n'existe pas
 browser_families_attributes.each do |attributes|
   BrowserFamily.find_or_create_by_name(attributes)
 end
@@ -90,7 +90,7 @@ browsers_versions = {
 browsers_versions.each do |browser_name, versions_attributes|
   browser = BrowserFamily.find_by_name(browser_name)
   versions_attributes.each do |version_attributes|
-    version_attributes.merge!(browser_family_id: browser.id) #Merge! => Ajout du hash passé en paramètre au hash précédent.
+    version_attributes.merge!(browser_family_id: browser.id) #Merge! => Ajout du hash passe en parametre au hash precedent.
     Version.find_or_create_by_name_and_browser_family_id(version_attributes)
   end
 end
@@ -131,11 +131,11 @@ end
 #########
 
 features = {
-  "Aide/Support" => ["Support e-Mail", "Aide en ligne", "Tutoriels", "FAQs", "Docs/Guide", "Support Téléphonique"],
-  "Securite" => ["Controle parental", "Anti-Spyware", "Blocage Pop-up", "Anti-Virus", "Navigation en mode Privé", "Historique de navigation"], 
-  "Divers" => ["Géolocalisation", "Barre URL intelligente", "Mise à jour automatique", "Integration d'un moteur de recherche", "Sauvegarde d'onglets", 
-               "Modification du thème", "Flux RSS", "Gestionnaire de Mot de passe", "Zoom sur la page", "Add-on", "Développement Open Source", 
-               "Gestionnaire de téléchargements", "Syncronisation mobile", "Interaction vocale"]
+  "Aide/Support" => ["Support e-Mail", "Aide en ligne", "Tutoriels", "FAQs", "Docs/Guides", "Support Telephonique"],
+  "Securite" => ["Controle parental", "Anti-Spyware", "Blocage Pop-up", "Anti-Virus", "Navigation en mode Prive", "Historique de navigation"], 
+  "Divers" => ["Geolocalisation", "Barre URL intelligente", "Mise à jour automatique", "Integration d'un moteur de recherche", "Sauvegarde d'onglets", 
+               "Modification du theme", "Flux RSS", "Gestionnaire de Mot de passe", "Zoom sur la page", "Add-on", "Developpement Open Source", 
+               "Gestionnaire de telechargements", "Syncronisation mobile", "Interaction vocale"]
 } 
 
 features.each do |category_name, features_name|
@@ -147,4 +147,50 @@ end
 
 #FEATURE VERSION.
 ################
+
+versions_in_browsers = {"Windows 7" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Windows Vista" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Windows XP" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..8), "Opera" => (1..9)},
+                        "Mac OS Lion" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Mac OS Snow Leopard" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Mac OS Leopard" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Linux Ubuntu" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Linux Autres" => {"Google Chrome" => (1..16), "Safari" => (1..9), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)}
+                       }
+
+features_in_versions = {"Support e-Mail" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Aide en ligne" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Tutoriels" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "FAQs" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Docs/Guides" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Support Telephonique" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Controle parental" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Anti-Spyware" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Blocage Pop-up" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Anti-Virus" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Navigation en mode Prive" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Historique de navigation" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Geolocalisation" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Barre URL intelligente" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Mise à jour automatique" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Integration d'un moteur de recherche" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Sauvegarde d'onglets" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Modification du theme" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Flux RSS" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Gestionnaire de Mot de passe" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Zoom sur la page" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Add-on" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Developpement Open Source" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Gestionnaire de telechargements" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Syncronisation mobile" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)},
+                        "Interaction vocale" => {"Google Chrome" => (1..16), "Safari" => (1..5), "Firefox" => (1..9), "Internet Explorer" => (1..9), "Opera" => (1..9)}}
+                        
+features_in_versions.each do |features, values|
+  values.each do |browser, versions|
+    versions.each_with_index do |version_number, index|
+     feature_version = FeatureVersion.create(version_id: Version.find_by_name(version_number).id, feature_id: Feature.find_by_name(features).id)  
+     puts "BROWSER -> #{browser} // VERSION -> #{Version.find_by_name(version_number).name} // #{Feature.find_by_name(features).name}"
+    end
+  end
+end
 
