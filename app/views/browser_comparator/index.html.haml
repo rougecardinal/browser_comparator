@@ -29,13 +29,11 @@
             = feature.name
           %td.current_browser
             Oui/Non
-          %td
-            firefox
-          %td
-            Chrome
-          %td
-            IE
-          %td
-            Safari
-          %td
-            Opera
+            
+          - @browsers.each do |browser|
+            %td
+              - if browser.last_version_has_feature?(feature)
+                = "Oui"
+              - else
+                = "Non"
+              
