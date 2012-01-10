@@ -188,7 +188,8 @@ features_in_versions = {"Support e-Mail" => {"Google Chrome" => (1..16), "Safari
 features_in_versions.each do |features, values|
   values.each do |browser, versions|
     versions.each_with_index do |version_number, index|
-     feature_version = FeatureVersion.create(version_id: Version.find_by_name(version_number).id, feature_id: Feature.find_by_name(features).id)  
+     feature_version = FeatureVersion.find_or_create_by_version_id_and_feature_id(feature_id: Feature.find_by_name(features).id, version_id: Version.find_by_name(version_number).id)  
+      puts "Browser -------- #{browser} ////////// FV => #{feature_version.id}"
     end
   end
 end
