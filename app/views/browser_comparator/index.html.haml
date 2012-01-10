@@ -12,35 +12,17 @@
       %tr
         %th Version
         %td.current_browser 7
-        %td 9
-        %td 10.2
-        %td 14
-        %td 12
+        - @browsers.each do |browser|
+          %td
+            = browser.versions.last.name
+          
       %tr
         %th Dernière mise a jour
-        %td.current_browser 12/04/09
-        %td 12/05/10
-        %td 12/06/11
-        %td 12/07/11
-        %td 12/08/10
-      %tr
-        %th Mise à jour Automatique
-        %td.current_browser Non
-        %td Non
-        %td Oui
-        %td Oui
-        %td Oui après authorisation
-      %tr
-        %th Barre de recherche intelligente
-        %td.current_browser Non
-        %td Non
-        %td Oui
-        %td Oui
-        %td Non
-      %tr
-        %th Géolocalisation
-        %td.current_browser Non
-        %td Non
-        %td Oui
-        %td Oui après authorisation
-        %td Oui
+        %td.current_browser 2009-04-09
+        - @browsers.each do |browser|
+          %td
+            = browser.versions.last.date_release
+    %table#tab_features
+      %th 
+        = FeatureVersion.find_by_version_id_and_feature_id(1,4).feature.name
+
