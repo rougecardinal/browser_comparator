@@ -190,13 +190,11 @@ features_in_versions = {
 }
 
 features_in_versions.each do |feature_name, browsers|
+  feature = Feature.find_by_name(feature_name)
   browsers.each do |browser_name, versions|
+    browser = BrowserFamily.find_by_name(browser_name)
     versions.each do |version_number|
-      version = Version.find_by_name_and_browser_family_id(version_number, BrowserFamily.find_by_name(browser_name).id)
-      puts "version found : #{version.id}"
-      puts "feature search : #{feature_name}"
-      feature = Feature.find_by_name(feature_name)
-      puts "feature found : #{feature.id}"
+      version = browser.versions.find_by_name(version_number)
       feature_version = FeatureVersion.find_or_create_by_feature_id_and_version_id(feature_id: feature.id, version_id: version.id )  
       puts"BROWSER #{browser_name}// FEATURE #{feature} // VERSION #{version_number} : FeatureVersion created : #{feature_version.id}"
     end
