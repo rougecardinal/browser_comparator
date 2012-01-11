@@ -1,5 +1,17 @@
 # encoding: utf-8
 
+def create_feature_in_version(browser, feature, min_version_number)
+  versions = browser.versions.where(["name > ?", min_version_number])
+  versions.each do |version|
+    
+    if !version.features.include? feature
+      version.features << feature 
+      version.save
+    end
+    
+  end
+end
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -194,15 +206,7 @@ features_in_versions.each do |feature_name, browsers|
   feature = Feature.find_by_name(feature_name)
   browsers.each do |browser_name, min_version_number|
     browser = BrowserFamily.find_by_name(browser_name)
-    versions = browser.versions.where(["name > ?", min_version_number])
-    versions.each do |version|
-      
-      if !version.features.include? feature
-        version.features << feature 
-        version.save
-      end
-      
-    end
+    create_feature_in_version(browser, feature, min_version_number)
   end
 end
 
