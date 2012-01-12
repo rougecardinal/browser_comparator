@@ -9,11 +9,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def create_feature_in_version(browser, feature, min_version_number)
-  versions = browser.versions.where(["name >= ?", min_version_number])
-  versions.each do |version|
-    if !version.features.include? feature
-      version.features << feature
-      version.save
+  if min_version_number != false
+    versions = browser.versions.where(["name >= ?", min_version_number])
+    versions.each do |version|
+      if !version.features.include? feature
+        version.features << feature
+        version.save
+      end
     end
   end
 end
@@ -167,182 +169,184 @@ features_in_versions = {
     "Safari" => 1
   },
   "Aide en ligne" => {
-
+    "Google Chrome" => false,
+    "Firefox" => false,
+    "Internet Explorer" => false,
+    "Opera" => false
   },
-  #   "Tutoriels" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "FAQs" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Docs/Guides" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Support Telephonique" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Controle parental" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Anti-Spyware" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Blocage Pop-up" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Anti-Virus" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Navigation en mode Prive" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Historique de navigation" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Geolocalisation" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Barre URL intelligente" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Mise à jour automatique" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Integration d'un moteur de recherche" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Sauvegarde d'onglets" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Modification du theme" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Flux RSS" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Gestionnaire de Mot de passe" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Zoom sur la page" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Add-on" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Developpement Open Source" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Gestionnaire de telechargements" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Syncronisation mobile" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   },
-  #   "Interaction vocale" => {
-  #     "Google Chrome" => 0,
-  #     "Safari" => 1,
-  #     "Firefox" => 0,
-  #     "Internet Explorer" => 1,
-  #     "Opera" => 1
-  #   }
+    "Tutoriels" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "FAQs" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Docs/Guides" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Support Telephonique" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Controle parental" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Anti-Spyware" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Blocage Pop-up" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Anti-Virus" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Navigation en mode Prive" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Historique de navigation" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Geolocalisation" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Barre URL intelligente" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Mise à jour automatique" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Integration d'un moteur de recherche" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Sauvegarde d'onglets" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Modification du theme" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Flux RSS" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Gestionnaire de Mot de passe" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Zoom sur la page" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Add-on" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Developpement Open Source" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Gestionnaire de telechargements" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Syncronisation mobile" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    },
+    "Interaction vocale" => {
+      "Google Chrome" => 0,
+      "Safari" => 1,
+      "Firefox" => 0,
+      "Internet Explorer" => 1,
+      "Opera" => 1
+    }
 }
 
 min_versions_hash = {"Google Chrome" => 0, "Internet Explorer" => 1, "Opera" => 1, "Safari" => 1, "Firefox" =>0}
 
 features_in_versions.each do |feature_name, browsers|
-  puts "numero 1 == #{browsers}"
   merging_version_browser = min_versions_hash.merge browsers
 
   feature = Feature.find_by_name(feature_name)
