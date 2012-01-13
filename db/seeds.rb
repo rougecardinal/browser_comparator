@@ -9,13 +9,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 def create_feature_in_version(browser, feature, min_version_number)
-  if min_version_number != false
-    versions = browser.versions.where(["name >= ?", min_version_number])
-    versions.each do |version|
-      if !version.features.include? feature
-        version.features << feature
-        version.save
-      end
+  versions = browser.versions.where(["name >= ?", min_version_number])
+  versions.each do |version|
+    if !version.features.include? feature
+      version.features << feature
+      version.save
     end
   end
 end
@@ -348,9 +346,12 @@ min_versions_hash = {"Google Chrome" => 0, "Internet Explorer" => 1, "Opera" => 
 
 features_in_versions.each do |feature_name, browsers|
   merging_version_browser = min_versions_hash.merge browsers
-
+  merging_version_browser.delete_if{|key, value| value == false}
+    
+  puts "#{merging_version_browser}"
   feature = Feature.find_by_name(feature_name)
   merging_version_browser.each do |browser_name, min_version_number|
+    
     browser = BrowserFamily.find_by_name(browser_name)
     create_feature_in_version(browser, feature, min_version_number)
   end
