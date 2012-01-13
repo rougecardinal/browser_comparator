@@ -2,38 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$main_color: #87A3DE;
-$text_color: #fff;
-html{
-  background-color: $main_color;
-}
-
-#bandeau_titre{
-  background-color: darken($main_color, 30);
-  margin-bottom: 20px;
-  -moz-border-radius: 10px 10px 0px 0px;
-  -webkit-border-radius: 10px 10px 0px 0px;
-  border-radius: 10px 10px 0px 0px;
-  height: 80px;
-  color: darken($text_color, 5);
-}
-
 body{
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-box-shadow: 4px 4px 5px 0px #898989;
-  -webkit-box-shadow: 4px 4px 5px 0px #898989;
-  margin: 40px;
+  background-color: #AAD4E4;
+}
 
+#content{
+  width: 1050px;
+  margin: 40px auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+
+  -webkit-border-radius: 10px 10px 10px 10px;
+  -webkit-box-shadow: 4px 4px 5px 0px #898989;
   font-family: "Arial Narrow", "Consolas";
   background-color: #fff;
 
-  .title_page_index{
-    text-align: center;
+  #header{
+    -webkit-border-radius: 10px 10px 0px 0px;
+    background-color: #365788;
+    height: 120px;
+    margin-bottom: 40px;
+
+    .title{
+      position: absolute;
+      margin-left: 30px;
+      margin-top: 20px;
+      color: #FFF;
+    }
+  }
+
+  #footer{
+    -webkit-border-radius: 0px 0px 10px 10px;
+    background-color: #3D3D3D;
+    height: 100px;
+    margin-top: 50px;
+    
+    
   }
 }
-
 #tab_browsers{
   text-align: center;
   border-spacing: 5px;
@@ -42,34 +49,32 @@ body{
     right: 8%;
   }
 }
-
 .current_browser{
   background-color: #CCC;
   color: #1E5A99;
   border: 0px;
 }
-
+th:hover{
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 5px 0px #898989;
+  background: #56B7DE;
+}
 th{
-  background: darken($main_color, 30); /* Old browsers */
-  -moz-border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  -moz-box-shadow: 3px 2px 2px 0px #898989;
-  -webkit-box-shadow: 3px 3px 2px 0px #898989;
-  border-color: #332109;
-  color: #FFF;
-  border-radius: 3px;
   width: 150px;
+  border-radius: 3px;
+  color: black;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(255, 255, 255, 0.4) 0 1px 7px 0px inset;
+  box-shadow: rgba(255, 255, 255, 0) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 7px 0px inset;
+  background: #FFF;
   padding: {
     right: 12px;
     left: 12px;
   }
 }
-
 .feature_name{
   width: 300px;
 }
 
-.feature_non{
-  background-color: #EE5E66;
+.empty_cell{
+  -webkit-box-shadow: 0px 0px 0px 0px #FFF;
 }

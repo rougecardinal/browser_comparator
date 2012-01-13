@@ -2,39 +2,41 @@
   %head
     %title Browser comparator
   %body
-    %div#bandeau_titre
-      %h2.title_page_index Browsers Comparator
-    %table#tab_browsers
-      %tr.browsers
-        %th.empty_cell
-        %th.current_browser IE (current Browser)
-        - @browsers.each do |browser|
-          %th
-            = browser.name
-      %tr
-        %th Version
-        %td.current_browser 7
-        - @browsers.each do |browser|
-          %td
-            = browser.versions.last.name
-
-      %tr
-        %th Dernière mise a jour
-        %td.current_browser 2009-04-09
-        - @browsers.each do |browser|
-          %td
-            = browser.versions.last.date_release
-
-      - @features.each do |feature|
+    %div#content
+      %div#header
+        %h1.title Browsers Comparator
+      %table#tab_browsers
+        %tr.browsers
+          %th.empty_cell
+          %th.current_browser IE (current Browser)
+          - @browsers.each do |browser|
+            %th
+              = browser.name
         %tr
-          %th.feature_name
-            = feature.name
-          %td.current_browser
-            Oui/Non
-
+          %th Version
+          %td.current_browser 7
           - @browsers.each do |browser|
             %td
-              - if browser.last_version_has_feature?(feature)
-                = "Oui"
-              - else
-                = "Non"
+              = browser.versions.last.name
+
+        %tr
+          %th Dernière mise a jour
+          %td.current_browser 2009-04-09
+          - @browsers.each do |browser|
+            %td
+              = browser.versions.last.date_release
+
+        - @features.each do |feature|
+          %tr
+            %th.feature_name
+              = feature.name
+            %td.current_browser
+              Oui/Non
+
+            - @browsers.each do |browser|
+              %td
+                - if browser.last_version_has_feature?(feature)
+                  = "Oui"
+                - else
+                  = "Non"
+      %div#footer
