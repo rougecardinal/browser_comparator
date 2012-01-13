@@ -5,6 +5,13 @@
     %div#content
       %div#header
         %h1.title Browsers Comparator
+        %div.images
+          = image_tag("Chrome.png", :alt => "Chrome")
+          = image_tag("Safari.png", :alt => "Safari")
+          = image_tag("Opera.png", :alt => "Opera")
+          = image_tag("IE.png", :alt => "IE")
+          = image_tag("Firefox.png", :alt => "Firefox")
+
       %table#tab_browsers
         %tr.browsers
           %th.empty_cell
@@ -12,22 +19,22 @@
           - @browsers.each do |browser|
             %th
               = browser.name
-        %tr
-          %th Version
+        %tr.table_ligne
+          %th.feature_name Version
           %td.current_browser 7
           - @browsers.each do |browser|
             %td
               = browser.versions.last.name
 
-        %tr
-          %th Dernière mise a jour
+        %tr.table_ligne
+          %th.feature_name Dernière mise a jour
           %td.current_browser 2009-04-09
           - @browsers.each do |browser|
             %td
               = browser.versions.last.date_release
 
         - @features.each do |feature|
-          %tr
+          %tr.table_ligne
             %th.feature_name
               = feature.name
             %td.current_browser
@@ -40,3 +47,5 @@
                 - else
                   = "Non"
       %div#footer
+        %div.copyright
+          Copyright © 2012 - RougeCardinal
