@@ -64,24 +64,24 @@ body{
           background-image: url('IE_color.png');
         }
       }
-      .img_opera{
-        width: 80px;
-        height: 70px;
-        background-image: url('Opera.png');
-        margin-left: 760px;
-        position: absolute;
-        &:hover{
-          background-image: url('Opera_color.png');
-        }
-      }
       .img_safari{
         width: 80px;
         height: 81px;
         background-image: url('Safari.png');
-        margin-left: 865px;
+        margin-left: 760px;
         position: absolute;
         &:hover{
           background-image: url('Safari_color.png');
+        }
+      }
+      .img_opera{
+        width: 80px;
+        height: 70px;
+        background-image: url('Opera.png');
+        margin-left: 865px;
+        position: absolute;
+        &:hover{
+          background-image: url('Opera_color.png');
         }
       }
     }
