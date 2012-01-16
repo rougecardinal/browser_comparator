@@ -7,11 +7,10 @@
       %div.img_ie
       %div.img_opera
       %div.img_safari
-
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
-      %th.current_browser IE ( current Browser )
+      %th.current_browser
       - @browsers.each do |browser|
         %th
           = browser.name
