@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin img_properties($browser_name){
+  width: 80px;
+  height: 80px;
+  background-image: url($browser_name+'.png');
+  position: absolute;
+  background-repeat:no-repeat;
+  &:hover{
+    background-image: url($browser_name+'_color.png');
+  }
+}
+
 body{
   background-color: #D3D3D3;
 }
@@ -33,56 +44,26 @@ body{
     }
     .images{
       padding-top: 50px;
-
+      
       .img_firefox{
-        width: 80px;
-        height: 77px;
-        background-image: url('Firefox.png');
         margin-left: 440px;
-        position: absolute;
-        &:hover{
-          background-image: url('Firefox_color.png');
-        }
+        @include img_properties(Firefox);
       }
       .img_chrome{
-        width: 80px;
-        height: 76px;
-        background-image: url('Chrome.png');
         margin-left: 544px;
-        position: absolute;
-        &:hover{
-          background-image: url('Chrome_color.png');
-        }
+        @include img_properties(Chrome);
       }
       .img_ie{
-        width: 80px;
-        height: 77px;
-        background-image: url('IE.png');
         margin-left: 654px;
-        position: absolute;
-        &:hover{
-          background-image: url('IE_color.png');
-        }
+        @include img_properties(IE);
       }
       .img_safari{
-        width: 80px;
-        height: 81px;
-        background-image: url('Safari.png');
         margin-left: 760px;
-        position: absolute;
-        &:hover{
-          background-image: url('Safari_color.png');
-        }
+        @include img_properties(Safari);
       }
       .img_opera{
-        width: 80px;
-        height: 70px;
-        background-image: url('Opera.png');
         margin-left: 865px;
-        position: absolute;
-        &:hover{
-          background-image: url('Opera_color.png');
-        }
+        @include img_properties(Opera);
       }
     }
   }
@@ -143,4 +124,8 @@ th{
     right: 12px;
     left: 12px;
   }
+}
+
+td{
+  border-radius: 3px;
 }
