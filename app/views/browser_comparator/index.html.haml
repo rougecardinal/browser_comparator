@@ -7,7 +7,6 @@
       %div.img_ie
       %div.img_opera
       %div.img_safari
-  = @current_browser.os
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
@@ -19,14 +18,15 @@
     %tr.table_ligne
       %th.feature_name Version
       %td.current_browser
-        = @current_browser.version
+        = @current_browser_version.name
       - @browsers.each do |browser|
         %td
           = browser.versions.last.name
 
     %tr.table_ligne
       %th.feature_name Dernière mise a jour
-      %td.current_browser 2009-04-09
+      %td.current_browser 
+        = @current_browser_version.date_release
       - @browsers.each do |browser|
         %td
           = browser.versions.last.date_release
@@ -36,8 +36,10 @@
         %th.feature_name
           = feature.name
         %td.current_browser
-          Oui/Non
-
+          - if @current_browser.last_version_has_feature?(feature)
+            = "Oui"
+          - else
+            = "Non"  
         - @browsers.each do |browser|
           %td
             - if browser.last_version_has_feature?(feature)
