@@ -1,4 +1,8 @@
 BrowserComparator::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :users
+
   get "browser_comparator/index"
 
   # The priority is based upon order of creation:
