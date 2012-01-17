@@ -14,6 +14,7 @@ end
 
 gem "heroku"
 gem 'haml'
+gem "user-agent", "~> 1.0.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
