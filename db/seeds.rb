@@ -142,7 +142,7 @@ end
 features = {
   "Aide/Support" => ["Support e-Mail", "Aide en ligne", "Tutoriels", "FAQs", "Docs/Guides", "Support Telephonique"],
   "Securite" => ["Controle parental", "Anti-Spyware", "Blocage Pop-up", "Anti-Virus", "Navigation en mode Prive", "Historique de navigation"],
-  "Divers" => ["Geolocalisation", "Barre URL intelligente", "Mise à jour automatique", "Integration d'un moteur de recherche", "Sauvegarde d'onglets",
+  "Divers" => ["Barre URL intelligente", "Mise à jour automatique", "Integration d'un moteur de recherche", "Sauvegarde d'onglets",
                "Modification du theme", "Flux RSS", "Gestionnaire de Mot de passe", "Zoom sur la page", "Add-on", "Developpement Open Source",
                "Gestionnaire de telechargements", "Syncronisation mobile", "Interaction vocale"]
 }
@@ -160,185 +160,76 @@ end
 
 features_in_versions = {
   "Support e-Mail" => {
-    "Chrome" => 0,
-    "Firefox" => 0,
-    "Internet Explorer" => 1,
-    "Opera" => 1,
-    "Safari" => 1
-  },
-  "Aide en ligne" => {
     "Chrome" => false,
-    "Firefox" => false,
-    "Internet Explorer" => false,
-    "Opera" => false
+    "Safari" => false
   },
+    "Aide en ligne" => {
+    },
     "Tutoriels" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "FAQs" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Docs/Guides" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Support Telephonique" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Chrome" => false,
+      "Safari" => false,
+      "Firefox" => false,
+      "Opera" => false
     },
     "Controle parental" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Chrome" => false,
+      "Safari" => false,
+      "Opera" => false
     },
     "Anti-Spyware" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Blocage Pop-up" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Anti-Virus" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Navigation en mode Prive" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Historique de navigation" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
-    },
-    "Geolocalisation" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Barre URL intelligente" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Mise à jour automatique" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Safari" => false,
+      "Firefox" => false,
+      "Internet Explorer" => false,
+      "Opera" => false
     },
     "Integration d'un moteur de recherche" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Sauvegarde d'onglets" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Modification du theme" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Flux RSS" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Gestionnaire de Mot de passe" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Zoom sur la page" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Add-on" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Developpement Open Source" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Safari" => false,
+      "Internet Explorer" => false,
+      "Opera" => false
     },
     "Gestionnaire de telechargements" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
     },
     "Syncronisation mobile" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Safari" => false,
+      "Firefox" => false
     },
     "Interaction vocale" => {
-      "Chrome" => 0,
-      "Safari" => 1,
-      "Firefox" => 0,
-      "Internet Explorer" => 1,
-      "Opera" => 1
+      "Chrome" => false,
+      "Safari" => false,
+      "Firefox" => false,
+      "Internet Explorer" => false
     }
 }
 
