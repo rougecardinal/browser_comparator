@@ -7,6 +7,7 @@
       %div.img_ie
       %div.img_opera
       %div.img_safari
+  = @current_browser.os
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
@@ -17,7 +18,8 @@
           = browser.name
     %tr.table_ligne
       %th.feature_name Version
-      %td.current_browser 7
+      %td.current_browser
+        = @current_browser.version
       - @browsers.each do |browser|
         %td
           = browser.versions.last.name
