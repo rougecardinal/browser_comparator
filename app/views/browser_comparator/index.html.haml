@@ -15,7 +15,7 @@
       - @browsers.each do |browser|
         %th.other_browser
           = browser.name
-    %tr.table_ligne
+    %tr.table_line
       %th.feature_name Version
       %td.current_browser
         = @current_browser_version.name
@@ -23,7 +23,7 @@
         %td.other_browser
           = browser.versions.last.name
 
-    %tr.table_ligne
+    %tr.table_line
       %th.feature_name Dernière mise a jour
       %td.current_browser
         = @current_browser_version.date_release
@@ -32,7 +32,7 @@
           = browser.versions.last.date_release
 
     - @features.each do |feature|
-      %tr.table_ligne
+      %tr.table_line
         %th.feature_name
           = feature.name
         %td.current_browser
