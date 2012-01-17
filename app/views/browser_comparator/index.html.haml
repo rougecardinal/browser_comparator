@@ -42,11 +42,19 @@
             = "Non"
         - @browsers.each do |browser|
           - if browser.last_version_has_feature?(feature)
-            %td.other_browser_has
-              = "Oui"
-          - else
-            %td.other_browser_has_not
-              = "Non"
+            - if browser.last_version_has_feature?(feature) == @current_browser.last_version_has_feature?(feature)
+              %td.cell_white
+                = "Oui"
+            - else
+              %td.cell_green
+                = "Oui" #ici, la cellule aura un background-color Vert
+          - else 
+            - if browser.last_version_has_feature?(feature) == @current_browser.last_version_has_feature?(feature)
+              %td.cell_white
+                = "Non"
+            - else
+              %td.cell_red
+                = "Non" #ici, la cellule aura un background-color Rouge
 
   %div#footer
     %div.copyright
