@@ -1,12 +1,12 @@
-%div#content
-  %div#header
+#content
+  #header
     %h1.title Browsers Comparator
     %div.images
-      %div.img_firefox
-      %div.img_chrome
-      %div.img_ie
-      %div.img_opera
-      %div.img_safari
+      .img_firefox
+      .img_chrome
+      .img_ie
+      .img_opera
+      .img_safari
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
@@ -42,20 +42,20 @@
             = "Non"
         - @browsers.each do |browser|
           - if browser.last_version_has_feature?(feature)
-            - if browser.last_version_has_feature?(feature) == @current_browser.last_version_has_feature?(feature)
-              %td.cell_white
+            - if compare_features_value(browser, feature)
+              %td
                 = "Oui"
             - else
-              %td.cell_green
+              %td.has_not_and_has
                 = "Oui" #ici, la cellule aura un background-color Vert
           - else 
-            - if browser.last_version_has_feature?(feature) == @current_browser.last_version_has_feature?(feature)
-              %td.cell_white
+            - if compare_features_value(browser, feature)
+              %td
                 = "Non"
             - else
-              %td.cell_red
+              %td.has_and_has_not
                 = "Non" #ici, la cellule aura un background-color Rouge
 
-  %div#footer
-    %div.copyright
+  #footer
+    .copyright
       Copyright © 2012 - Rouge Cardinal
