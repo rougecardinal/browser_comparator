@@ -24,7 +24,7 @@ end
 # Tableau de hashs avec les attributs de BrowserFamily
 browser_families_attributes = [
   {name: "Firefox", prod_society: "Mozilla"},
-  {name: "Google Chrome", prod_society: "Google"},
+  {name: "Chrome", prod_society: "Google"},
   {name: "Internet Explorer", prod_society: "Microsoft"},
   {name: "Safari", prod_society: "Apple"},
   {name: "Opera", prod_society: "Opera Software"}
@@ -55,7 +55,7 @@ browsers_versions = {
               {name: "7", date_release: "2011/09/27"},
               {name: "8", date_release: "2011/11/08"},
               {name: "9", date_release: "2011/12/20"}],
-"Google Chrome" => [{name: "0", date_release: "2008/09/02"},
+"Chrome" => [{name: "0", date_release: "2008/09/02"},
                     {name: "1", date_release: "2008/12/11"},
                     {name: "2", date_release: "2009/05/24"},
                     {name: "3", date_release: "2009/10/12"},
@@ -118,14 +118,14 @@ end
 #OS VERSION.
 ###########
 
-versions_in_browsers = {"Windows 7" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Windows Vista" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Windows XP" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..8), "Opera" => (1..11)},
-                        "Mac OS Lion" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Mac OS Snow Leopard" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Mac OS Leopard" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Linux Ubuntu" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Linux Autres" => {"Google Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)}
+versions_in_browsers = {"Windows 7" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Windows Vista" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Windows XP" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..8), "Opera" => (1..11)},
+                        "Mac OS Lion" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Mac OS Snow Leopard" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Mac OS Leopard" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Linux Ubuntu" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Linux Autres" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)}
                        }
 versions_in_browsers.each do |os, values|
   values.each do |browser, versions|
@@ -160,181 +160,181 @@ end
 
 features_in_versions = {
   "Support e-Mail" => {
-    "Google Chrome" => 0,
+    "Chrome" => 0,
     "Firefox" => 0,
     "Internet Explorer" => 1,
     "Opera" => 1,
     "Safari" => 1
   },
   "Aide en ligne" => {
-    "Google Chrome" => false,
+    "Chrome" => false,
     "Firefox" => false,
     "Internet Explorer" => false,
     "Opera" => false
   },
     "Tutoriels" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "FAQs" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Docs/Guides" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Support Telephonique" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Controle parental" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Anti-Spyware" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Blocage Pop-up" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Anti-Virus" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Navigation en mode Prive" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Historique de navigation" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Geolocalisation" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Barre URL intelligente" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Mise à jour automatique" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Integration d'un moteur de recherche" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Sauvegarde d'onglets" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Modification du theme" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Flux RSS" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Gestionnaire de Mot de passe" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Zoom sur la page" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Add-on" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Developpement Open Source" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Gestionnaire de telechargements" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Syncronisation mobile" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
       "Opera" => 1
     },
     "Interaction vocale" => {
-      "Google Chrome" => 0,
+      "Chrome" => 0,
       "Safari" => 1,
       "Firefox" => 0,
       "Internet Explorer" => 1,
@@ -342,7 +342,7 @@ features_in_versions = {
     }
 }
 
-min_versions_hash = {"Google Chrome" => 0, "Internet Explorer" => 1, "Opera" => 1, "Safari" => 1, "Firefox" =>0}
+min_versions_hash = {"Chrome" => 0, "Internet Explorer" => 1, "Opera" => 1, "Safari" => 1, "Firefox" =>0}
 
 features_in_versions.each do |feature_name, browsers|
   merging_version_browser = min_versions_hash.merge browsers
