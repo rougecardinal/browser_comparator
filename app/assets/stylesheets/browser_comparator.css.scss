@@ -44,7 +44,7 @@ body{
     }
     .images{
       padding-top: 50px;
-      
+
       .img_firefox{
         margin-left: 440px;
         @include img_properties(Firefox);
@@ -128,4 +128,11 @@ th{
 
 td{
   border-radius: 3px;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+.other_browser_has_not{
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.other_browser_has{
+  background-color: rgba(0, 255, 0, 0.2);
 }

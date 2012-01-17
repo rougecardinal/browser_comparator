@@ -13,22 +13,22 @@
       %th.current_browser
         = @current_browser.name
       - @browsers.each do |browser|
-        %th
+        %th.other_browser
           = browser.name
     %tr.table_ligne
       %th.feature_name Version
       %td.current_browser
         = @current_browser_version.name
       - @browsers.each do |browser|
-        %td
+        %td.other_browser
           = browser.versions.last.name
 
     %tr.table_ligne
       %th.feature_name Dernière mise a jour
-      %td.current_browser 
+      %td.current_browser
         = @current_browser_version.date_release
       - @browsers.each do |browser|
-        %td
+        %td.other_browser
           = browser.versions.last.date_release
 
     - @features.each do |feature|
@@ -39,13 +39,15 @@
           - if @current_browser.last_version_has_feature?(feature)
             = "Oui"
           - else
-            = "Non"  
+            = "Non"
         - @browsers.each do |browser|
-          %td
-            - if browser.last_version_has_feature?(feature)
+          - if browser.last_version_has_feature?(feature)
+            %td.other_browser_has
               = "Oui"
-            - else
+          - else
+            %td.other_browser_has_not
               = "Non"
+
   %div#footer
     %div.copyright
-      Copyright © 2012 - RougeCardinal
+      Copyright © 2012 - Rouge Cardinal
