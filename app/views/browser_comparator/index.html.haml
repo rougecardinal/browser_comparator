@@ -41,21 +41,8 @@
           - else
             = "Non"
         - @browsers.each do |browser|
-          - if browser.last_version_has_feature?(feature)
-            - if compare_features_value(browser, feature)
-              %td
-                = "Oui"
-            - else
-              %td.has_not_and_has
-                = "Oui" #ici, la cellule aura un background-color Vert
-          - else 
-            - if compare_features_value(browser, feature)
-              %td
-                = "Non"
-            - else
-              %td.has_and_has_not
-                = "Non" #ici, la cellule aura un background-color Rouge
-
+          = compare_features_value(browser, feature)
+          
   #footer
     .copyright
       Copyright © 2012 - Rouge Cardinal
