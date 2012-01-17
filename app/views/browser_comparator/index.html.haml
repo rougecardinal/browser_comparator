@@ -11,6 +11,7 @@
     %tr.browsers
       %th.empty_cell
       %th.current_browser
+        = @current_browser.name
       - @browsers.each do |browser|
         %th
           = browser.name
