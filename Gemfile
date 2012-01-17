@@ -15,6 +15,7 @@ end
 gem "heroku"
 gem 'haml'
 gem "user-agent", "~> 1.0.0"
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,3 +43,5 @@ group :test do
   # Pretty printed test output
   gem 'turn', '~> 0.8.3', :require => false
 end
+
+gem "devise"
