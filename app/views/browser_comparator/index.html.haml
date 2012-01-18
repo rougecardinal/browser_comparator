@@ -1,13 +1,15 @@
 #content
   #header
     %h1.title Browsers Comparator
+    = t :hello
+    = t :bye
     %div.images
       .img_firefox
       .img_chrome
       .img_ie
       .img_opera
       .img_safari
-
+    
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
@@ -31,10 +33,9 @@
       %tr{class: "#{current_browser_has_feature(feature)}"}
         %th.feature_name
           = feature.name
-          = I18n.t "hello"
         - @last_versions.each_with_index do |version, index|
           = compare_features_value(version, feature, index == 0 )
 
-  #footer
+  #footer      
     .copyright
       Copyright © 2012 - Rouge Cardinal
