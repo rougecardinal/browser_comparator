@@ -15,14 +15,14 @@
         %th{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.browser_family.name
 
-    %tr
+    %tr.version_date_release
       %th.feature_name Version
       - @last_versions.each_with_index do |version, index|
         %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.name
 
-    %tr
-      %th.feature_name Dernière mise a jour
+    %tr.version_date_release
+      %th.feature_name Dernière mise à jour
       - @last_versions.each_with_index do |version, index|
         %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.date_release
