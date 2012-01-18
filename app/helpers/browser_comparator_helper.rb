@@ -13,6 +13,6 @@ module BrowserComparatorHelper
   end
   
   def current_browser_has_feature(feature)
-    @current_browser_version.has_feature?(feature) ? "has_feature" : "has_not_feature"
+    @last_versions[0].has_feature?(feature) ? "has_feature" : "has_not_feature"
   end  
 end

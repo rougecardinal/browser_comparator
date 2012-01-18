@@ -15,7 +15,6 @@
         %th{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.browser_family.name
 
-
     %tr
       %th.feature_name Version
       - @last_versions.each_with_index do |version, index|
