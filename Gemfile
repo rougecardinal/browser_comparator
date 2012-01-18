@@ -16,6 +16,7 @@ gem "heroku"
 gem 'haml'
 gem "user-agent", "~> 1.0.0"
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'i18n'
 
 # Gems used only for assets and not required
 # in production environments by default.

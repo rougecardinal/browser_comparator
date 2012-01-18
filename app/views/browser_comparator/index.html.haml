@@ -31,6 +31,7 @@
       %tr{class: "#{current_browser_has_feature(feature)}"}
         %th.feature_name
           = feature.name
+          = I18n.t "hello"
         - @last_versions.each_with_index do |version, index|
           = compare_features_value(version, feature, index == 0 )
 

@@ -12,6 +12,5 @@ class BrowserComparatorController < ApplicationController
     
     current_browser = BrowserFamily.find_by_name(current_agent.name)
     @last_versions.unshift current_browser.versions.find_by_name(current_agent_version_name)
-    
   end
 end

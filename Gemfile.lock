@@ -164,6 +164,7 @@ DEPENDENCIES
   devise
   haml
   heroku
+  i18n
   jquery-rails
   pg
   rails (= 3.1.3)
