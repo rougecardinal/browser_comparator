@@ -13,6 +13,15 @@
   }
 }
 
+@mixin tr_hover{
+  &:hover{
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 5px 0px #898989;
+  background: #414968;
+  color: #FFF;
+  }
+}
+
 body{
   background-color: #D3D3D3;
 }
@@ -109,12 +118,6 @@ body{
     color: none;
   }
 }
-.table_line:hover{
-  -webkit-border-radius: 3px;
-  -webkit-box-shadow: 4px 4px 5px 0px #898989;
-  background: #414968;
-  color: #FFF;
-}
 th{
   width: 150px;
   border-radius: 3px;
@@ -130,9 +133,17 @@ td{
   border-radius: 3px;
   border: solid 1px rgba(0, 0, 0, 0.3);
 }
-.has_not_and_has{
-  background-color: rgba(0, 255, 0, 0.2);
+
+.has_feature{
+  @include tr_hover;
+  .has_not{
+    background-color: rgba(255, 0, 0, 0.2);
+  }
 }
-.has_and_has_not{
-  background-color: rgba(255, 0, 0, 0.2);
+
+.has_not_feature{
+  @include tr_hover;
+  .has{
+    background-color: rgba(0, 255, 0, 0.2);
+  }
 }

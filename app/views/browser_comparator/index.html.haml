@@ -32,7 +32,7 @@
           = browser.versions.last.date_release
 
     - @features.each do |feature|
-      %tr.table_line
+      %tr{class: "#{current_browser_has_feature(feature)}"}
         %th.feature_name
           = feature.name
         %td.current_browser
@@ -42,7 +42,6 @@
             = "Non"
         - @browsers.each do |browser|
           = compare_features_value(browser, feature)
-          
   #footer
     .copyright
       Copyright © 2012 - Rouge Cardinal
