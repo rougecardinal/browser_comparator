@@ -4,8 +4,16 @@
     = t :hello
     = t :bye
     
-    = link_to "Français", "/?locale=fr"
-    = link_to "English", "/?locale=en"
+    
+    = link_to "Français", root_path(locale: "fr")
+    = link_to "English", root_path(locale: "en")
+    
+    
+    = form_tag change_locale_path, method: :get do
+      = select_tag "locale_name", options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s')
+      %input{type: :submit, value: "Change Locale"}
+    
+
     %div.images
       .img_firefox
       .img_chrome
