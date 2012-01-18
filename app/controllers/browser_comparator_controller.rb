@@ -6,6 +6,8 @@ class BrowserComparatorController < ApplicationController
     current_user_agent 
     # Appel de la methode current_agent dans la methode index 
     # pour pouvoir l'utiliser dans la vue index.html.haml
+    @last_versions.unshift(@current_browser_version)
+    
   end
   
   def current_user_agent

@@ -1,13 +1,14 @@
 module BrowserComparatorHelper
 
-  def compare_features_value(version, feature)
+  def compare_features_value(version, feature, for_current_browser)
     if version.has_feature?(feature)
       text = "Oui"
-      css_class  = "has"
+      css_class  = ["has"]
     else
       text = "Non"
-      css_class  = "has_not"
+      css_class  = ["has_not"]
     end
+    css_class << "current_browser" if for_current_browser
     content_tag(:td, text, class: css_class)
   end
   
