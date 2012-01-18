@@ -14,8 +14,8 @@ class BrowserComparatorController < ApplicationController
     current_agent = Agent.new request.env['HTTP_USER_AGENT']    
     current_agent_version_name = current_agent.version.split(".")[0]
     
-    @current_browser = BrowserFamily.find_by_name(current_agent.name)
-    @current_browser_version = Version.find_by_name_and_browser_family_id(current_agent_version_name, @current_browser.id)
+    current_browser = BrowserFamily.find_by_name(current_agent.name)
+    @current_browser_version = Version.find_by_name_and_browser_family_id(current_agent_version_name, current_browser.id)
     
   end
 end
