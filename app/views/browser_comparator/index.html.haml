@@ -12,24 +12,24 @@
       %th.empty_cell
       %th.current_browser
         = @current_browser.name
-      - @browsers.each do |browser|
+      - @last_versions.each do |version|
         %th.other_browser
-          = browser.name
+          = version.browser_family.name
     %tr.table_line
       %th.feature_name Version
       %td.current_browser
         = @current_browser_version.name
-      - @browsers.each do |browser|
+      - @last_versions.each do |version|
         %td.other_browser
-          = browser.versions.last.name
+          = version.name
 
     %tr.table_line
       %th.feature_name Dernière mise a jour
       %td.current_browser
         = @current_browser_version.date_release
-      - @browsers.each do |browser|
+      - @last_versions.each do |version|
         %td.other_browser
-          = browser.versions.last.date_release
+          = version.date_release
 
     - @features.each do |feature|
       %tr{class: "#{current_browser_has_feature(feature)}"}
@@ -40,8 +40,8 @@
             = "Oui"
           - else
             = "Non"
-        - @browsers.each do |browser|
-          = compare_features_value(browser, feature)
+        - @last_versions.each do |version|
+          = compare_features_value(version, feature)
   #footer
     .copyright
       Copyright © 2012 - Rouge Cardinal

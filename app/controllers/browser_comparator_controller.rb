@@ -1,7 +1,7 @@
 class BrowserComparatorController < ApplicationController
 
   def index
-    @browsers = BrowserFamily.all
+    @last_versions = BrowserFamily.all.map{|browser| browser.versions.last}
     @features = Feature.all
     current_user_agent 
     # Appel de la methode current_agent dans la methode index 
