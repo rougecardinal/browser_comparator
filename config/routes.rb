@@ -4,6 +4,8 @@ BrowserComparator::Application.routes.draw do
   devise_for :users
 
   get "browser_comparator/index"
+  
+  match '/change_locale' => 'application#change_locale', :as => 'change_locale'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
