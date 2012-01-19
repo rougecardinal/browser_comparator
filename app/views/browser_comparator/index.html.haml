@@ -3,16 +3,16 @@
     %h1.title Browsers Comparator
     = t 'hello'
     = t :bye
-    
-    
+
+
     = link_to "Français", root_path(locale: "fr")
     = link_to "English", root_path(locale: "en")
-    
-    
+
+
     = form_tag change_locale_path, method: :get do
-      = select_tag "locale_name", options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s', selected = "")
+      = select_tag "locale_name", options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s', :selected => I18n.locale)
       %input{type: :submit, value: "Change Locale"}
-    
+
 
     %div.images
       .img_firefox
@@ -20,7 +20,7 @@
       .img_ie
       .img_opera
       .img_safari
-    
+
   %table#tab_browsers
     %tr.browsers
       %th.empty_cell
@@ -47,6 +47,6 @@
         - @last_versions.each_with_index do |version, index|
           = compare_features_value(version, feature, index == 0 )
 
-  #footer      
+  #footer
     .copyright
       Copyright © 2012 - Rouge Cardinal
