@@ -136,6 +136,21 @@ th{
   }
 }
 
+.category_name{
+  display: block;
+  width: 404%;
+  background: -webkit-linear-gradient(top, #9c1b22 0%, #9c1b22 100%);
+  -webkit-box-shadow: 3px 3px 4px 1px #898989;
+  color: #FFF;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  &:hover{
+    margin-top: 6px;
+    margin-bottom: 1px;
+    -webkit-box-shadow: 1px 1px 4px 1px #898989;
+  }
+}
+
 td{
   border-radius: 3px;
   border: solid 1px rgba(0, 0, 0, 0.3);

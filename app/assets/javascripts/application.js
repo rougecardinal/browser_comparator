@@ -12,3 +12,9 @@
 $("#locale_name").live("change", function(){
   $(this).parents("form").submit();
 });
+
+$(function(){
+  $(".category_name:first").click(function(){
+      $(".has_feature.aide_support, .has_not_feature.aide_support").toggle();
+  });
+});

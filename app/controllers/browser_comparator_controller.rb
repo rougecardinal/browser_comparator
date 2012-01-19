@@ -1,6 +1,7 @@
 class BrowserComparatorController < ApplicationController
 
   def index
+    @categories = Category.all
     @last_versions = BrowserFamily.all.map{|browser| browser.versions.last}
     @features = Feature.all
     current_user_agent     

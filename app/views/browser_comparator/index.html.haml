@@ -27,17 +27,20 @@
       - @last_versions.each_with_index do |version, index|
         %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.date_release
+    - @categories.each do  |category|
+      %tr
+        %th{class: "category_name #{category_name(category)}"}
+          = category.name
 
-    - @features.each do |feature|
-      %tr{class: "#{current_browser_has_feature(feature)}"}
-        %th.feature_name
-          = feature.name
-        - @last_versions.each_with_index do |version, index|
-          = compare_features_value(version, feature, index == 0 )
-
+      - category.features.each do |feature|
+        %tr{class: "#{current_browser_has_feature(feature)} #{feature_category_name(feature)}"}
+          %th.feature_name
+            = feature.name
+          - @last_versions.each_with_index do |version, index|
+            = compare_features_value(version, feature, index == 0 )
   #footer
     .copyright
-      Copyright © 2012 - 
+      Copyright © 2012 -
       = link_to "Rouge Cardinal", "http://rougecardinal.fr/", target: '_blank'
     .language
       = t 'choose_language'

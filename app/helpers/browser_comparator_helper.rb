@@ -1,7 +1,7 @@
 module BrowserComparatorHelper
 
   def compare_features_value(version, feature, for_current_browser)
-    if version.has_feature? feature 
+    if version.has_feature? feature
       text = t 'has_feature'
       css_class  = ["has"]
     else
@@ -14,5 +14,13 @@ module BrowserComparatorHelper
 
   def current_browser_has_feature(feature)
     @last_versions[0].has_feature?(feature) ? "has_feature" : "has_not_feature"
+  end
+
+  def feature_category_name(feature)
+    feature.category.name.downcase.gsub("/", "_")
+  end
+  
+  def category_name(category)
+    category.name.downcase.gsub("/", "_")
   end
 end
