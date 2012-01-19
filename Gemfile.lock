@@ -160,7 +160,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails (~> 3.1.1)
   devise
   haml
   heroku
