@@ -43,6 +43,3 @@
       = t 'choose_language'
       = form_tag change_locale_path, method: :get do
         = select_tag "locale_name", options_for_select(available_language, :selected => I18n.locale)
-        %input{type: :submit, value: "#{t 'change_locale'}"}
-   
-  /  options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s', :selected => I18n.locale)
