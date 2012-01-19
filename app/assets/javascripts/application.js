@@ -7,3 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$("#locale_name").live("change", function(){
+  $(this).parents("form").submit();
+});
