@@ -37,7 +37,8 @@
 
   #footer
     .copyright
-      Copyright © 2012 - Rouge Cardinal
+      Copyright © 2012 - 
+      = link_to "Rouge Cardinal", "http://rougecardinal.fr/", target: '_blank'
     .language
       = t 'choose_language'
       = form_tag change_locale_path, method: :get do
