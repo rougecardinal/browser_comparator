@@ -3,7 +3,7 @@
 module ApplicationHelper
 
   def available_language
-    [["Français", "fr"], ["English", "en"], ["中国", 'ch']]
+    [["Français", "fr"], ["English", "en"], ["中国", 'cn']]
   end
   
 
