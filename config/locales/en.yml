@@ -2,8 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world !"
-  bye: "Good bye world !"
   has_feature: "Yes"
   has_not_feature: "No"
   change_locale: "Change language"
+  choose_language: "Choose your language : "
