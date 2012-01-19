@@ -4,4 +4,6 @@
 en:
   hello: "Hello world !"
   bye: "Good bye world !"
+  has_feature: "Yes"
+  has_not_feature: "No"
   change_locale: "Change language"

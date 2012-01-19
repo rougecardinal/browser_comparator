@@ -1,7 +1,7 @@
 #content
   #header
     %h1.title Browsers Comparator
-    = t :hello
+    = t 'hello'
     = t :bye
     
     
@@ -10,7 +10,7 @@
     
     
     = form_tag change_locale_path, method: :get do
-      = select_tag "locale_name", options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s')
+      = select_tag "locale_name", options_from_collection_for_select(I18n.available_locales, 'to_s', 'to_s', selected = "")
       %input{type: :submit, value: "Change Locale"}
     
 

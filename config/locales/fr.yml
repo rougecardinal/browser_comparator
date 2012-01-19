@@ -4,4 +4,6 @@
 fr:
   hello: "Bonjour tout le monde !"
   bye: "Aurevoir tout le monde !"
+  has_feature: "Oui"
+  has_not_feature: "Non"
   change_locale: "Changer de langue"
