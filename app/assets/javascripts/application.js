@@ -14,7 +14,7 @@ $("#locale_name").live("change", function(){
 });
 
 $(function(){
-  $(".category_name:first").click(function(){
-      $(".has_feature.aide_support, .has_not_feature.aide_support").toggle();
+  $(".category_name").click(function(){
+    b = $(this).nextUntil(".category_name").toggle();
   });
 });
