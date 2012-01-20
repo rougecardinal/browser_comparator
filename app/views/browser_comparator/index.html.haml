@@ -27,13 +27,14 @@
       - @last_versions.each_with_index do |version, index|
         %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
           = version.date_release
+
     - @categories.each do  |category|
-      %tr
-        %th{class: "category_name #{category_name(category)}"}
+      %tr{class: "category_name"}
+        %th{colspan: "7", class: "category_name"}
           = category.name
 
       - category.features.each do |feature|
-        %tr{class: "#{current_browser_has_feature(feature)} #{feature_category_name(feature)}"}
+        %tr{class: "features_category #{current_browser_has_feature(feature)}"}
           %th.feature_name
             = feature.name
           - @last_versions.each_with_index do |version, index|
