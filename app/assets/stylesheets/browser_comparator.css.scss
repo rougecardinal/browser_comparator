@@ -6,11 +6,11 @@
 @mixin img_properties($browser_name){
   width: 80px;
   height: 80px;
-  background-image: url($browser_name+'.png');
+  background-image: url($browser_name+'_color.png');
   position: absolute;
   background-repeat:no-repeat;
   &:hover{
-    background-image: url($browser_name+'_color.png');
+    background-image: url($browser_name+'.png');
   }
 }
 
@@ -139,11 +139,6 @@ body{
       background-color: rgba(0, 255, 0, 0.2);
   }
 }
-
-
-
-
-
 
 #footer{
   -webkit-border-radius: 0px 0px 10px 10px;
