@@ -1,6 +1,6 @@
 Factory.define :browser_family do |f|
-	f.name "Chrome"
-	f.prod_society "Google"
+  f.name "name"
+	f.prod_society "prod societ"
 	f.rating 5
 end
 

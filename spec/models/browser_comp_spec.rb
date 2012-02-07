@@ -2,13 +2,25 @@ require 'spec_helper'
 
 describe 'BrowserFamily' do
 
+  let(:browser) { Factory.create(:browser_family) }
+  let(:version) { Factory.create(:version, :browser_family => browser) }
+
   it " Create Factory / browser" do
-    browser = Factory.create(:browser_family)
-    browser.name.should == "Chrome"  
+    browser.name.should == "name"
   end
 
-end
+  it "Create Factory / version" do
+    version.date_release.should == "2004-04-04".to_date
+  end
 
+  it " Verify browser version" do
+    # raise browser.inspect
+    # raise version.inspect
+    # raise browser.id.inspect
+    version 
+    browser.versions.first.should == version
+  end
+end
 
   # context '#verify attributes' do
   #   it '=> with attributes' do
