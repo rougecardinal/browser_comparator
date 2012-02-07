@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 group :development, :test do
   gem "rspec-rails", "~> 2.6"
   gem 'sqlite3'
+  gem "factory_girl_rails", "~> 1.2"
 end
 
 group :production do
