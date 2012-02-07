@@ -1,6 +1,6 @@
 Factory.define :browser_family do |f|
   f.name "name"
-	f.prod_society "prod societ"
+	f.prod_society "prod_society"
 	f.rating 5
 end
 
@@ -8,10 +8,21 @@ Factory.define :version do |f|
   f.sequence(:name) {|n| "#{n}"}
   f.date_release "2004-04-04"
   f.association :browser_family
-  # f.association :browser_family_id, :factory => :browser_family
 end
 
+Factory.define :category do |f|
+  f.name "category"
+end
 
+Factory.define :feature do |f|
+  f.name "feature"
+  f.association :category
+end
+
+Factory.define :featureVersion do |f|
+  f.association :feature
+  f.association :version 
+end
 
   # let(:add_version) {
   #   version = subject.versions.new()

@@ -1,10 +1,13 @@
 require 'spec_helper'
 
-describe 'BrowserFamily' do
+describe 'BrowserFamily' do  
 
   let(:browser) { Factory.create(:browser_family) }
   let(:version) { Factory.create(:version, :browser_family => browser) }
-
+  let(:category) { Factory.create(:category) }
+  let(:feature) { Factory.create(:feature, :category => category)}
+  let(:featureVersion) { Factory.create(:featureVersion, :feature => feature, :version => version) }
+ 
   it " Create Factory / browser" do
     browser.name.should == "name"
   end
@@ -14,11 +17,16 @@ describe 'BrowserFamily' do
   end
 
   it " Verify browser version" do
-    # raise browser.inspect
-    # raise version.inspect
-    # raise browser.id.inspect
     version 
     browser.versions.first.should == version
+  end
+
+  it "Verify featureVersion" do
+    feature
+    version
+    featureVersion.id.should == 1087
+    FeatureVersion.count.should == 1087
+    featureVersion.feature_id.should == feature.id
   end
 end
 
