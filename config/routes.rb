@@ -4,6 +4,8 @@ BrowserComparator::Application.routes.draw do
   devise_for :users
 
   get "browser_comparator/index"
+  match 'index' => 'browser_comparator#index'
+
   
   match '/change_locale' => 'application#change_locale', :as => 'change_locale'
 
@@ -56,8 +58,8 @@ BrowserComparator::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'browser_comparator#index'
-
+  #root :to => 'browser_comparator#index'
+  root :to => 'browser_comparator#startpage'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

@@ -7,4 +7,13 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    #content
+      = yield
+      #footer
+        .copyright
+          Copyright © 2012 -
+          = link_to "Rouge Cardinal", "http://rougecardinal.fr/", target: '_blank'
+        .language
+          = t 'choose_language'
+          = form_tag change_locale_path, method: :get do
+            = select_tag "locale_name", options_for_select(available_language, :selected => I18n.locale)

@@ -6,6 +6,13 @@ class BrowserComparatorController < ApplicationController
     @features = Feature.all
     current_user_agent     
   end
+
+  def startpage
+    @categories = Category.all
+    @last_versions = BrowserFamily.all.map{|browser| browser.versions.last}
+    @features = Feature.all
+    current_user_agent 
+  end
   
   def current_user_agent
     current_agent = Agent.new request.env['HTTP_USER_AGENT']    

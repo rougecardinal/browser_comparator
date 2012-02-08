@@ -1,49 +1,40 @@
-#content
-  #header
-    %h1.title Browsers Comparator
+#header
+  %h1.title Browsers Comparator
 
-    %div.images
-      .img_firefox
-      .img_chrome
-      .img_ie
-      .img_opera
-      .img_safari
+  %div.images
+    .img_firefox
+    .img_chrome
+    .img_ie
+    .img_opera
+    .img_safari
 
-  %table#tab_browsers
-    %tr.browsers
-      %th.empty_cell
-      - @last_versions.each_with_index do |version, index|
-        %th{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
-          = version.browser_family.name
+%table#tab_browsers
+  %tr.browsers
+    %th.empty_cell
+    - @last_versions.each_with_index do |version, index|
+      %th{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
+        = version.browser_family.name
 
-    %tr.version_date_release
-      %th.feature_name Version
-      - @last_versions.each_with_index do |version, index|
-        %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
-          = version.name
+  %tr.version_date_release
+    %th.feature_name Version
+    - @last_versions.each_with_index do |version, index|
+      %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
+        = version.name
 
-    %tr.version_date_release
-      %th.feature_name Dernière mise à jour
-      - @last_versions.each_with_index do |version, index|
-        %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
-          = version.date_release
+  %tr.version_date_release
+    %th.feature_name Dernière mise à jour
+    - @last_versions.each_with_index do |version, index|
+      %td{class: "#{index == 0 ? 'current_browser' : 'other_browser'}"}
+        = version.date_release
 
-    - @categories.each do  |category|
-      %tr{class: "category_name"}
-        %th{colspan: "7", class: "category_name"}
-          = category.name
+  - @categories.each do  |category|
+    %tr{class: "category_name"}
+      %th{colspan: "7", class: "category_name"}
+        = category.name
 
-      - category.features.each do |feature|
-        %tr{class: "features_category #{current_browser_has_feature(feature)}"}
-          %th.feature_name
-            = feature.name
-          - @last_versions.each_with_index do |version, index|
-            = compare_features_value(version, feature, index == 0 )
-  #footer
-    .copyright
-      Copyright © 2012 -
-      = link_to "Rouge Cardinal", "http://rougecardinal.fr/", target: '_blank'
-    .language
-      = t 'choose_language'
-      = form_tag change_locale_path, method: :get do
-        = select_tag "locale_name", options_for_select(available_language, :selected => I18n.locale)
+    - category.features.each do |feature|
+      %tr{class: "features_category #{current_browser_has_feature(feature)}"}
+        %th.feature_name
+          = feature.name
+        - @last_versions.each_with_index do |version, index|
+          = compare_features_value(version, feature, index == 0 )
