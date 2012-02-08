@@ -8,6 +8,16 @@
     = csrf_meta_tags
   %body
     #content
+      #header
+        %h1.title 
+          = link_to 'Browsers Comparator', root_path
+        %div.images
+          .img_firefox
+          .img_chrome
+          .img_ie
+          .img_opera
+          .img_safari
+
       = yield
       #footer
         .copyright
