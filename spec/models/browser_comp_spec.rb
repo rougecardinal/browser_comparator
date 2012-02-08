@@ -24,8 +24,6 @@ describe 'BrowserFamily' do
   it "Verify featureVersion" do
     feature
     version
-    featureVersion.id.should == 1087
-    FeatureVersion.count.should == 1087
     featureVersion.feature_id.should == feature.id
   end
 end

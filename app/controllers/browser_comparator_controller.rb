@@ -11,6 +11,7 @@ class BrowserComparatorController < ApplicationController
     @categories = Category.all
     @last_versions = BrowserFamily.all.map{|browser| browser.versions.last}
     @features = Feature.all
+    @welcome = "bienvenue"
     current_user_agent 
   end
   
