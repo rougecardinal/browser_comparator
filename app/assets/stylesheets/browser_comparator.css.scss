@@ -100,7 +100,7 @@ body{
     box-shadow: rgba(255, 255, 255, 0) 0 1px 0, rgba(255, 182, 0, 0.7) 0 1px 9px 0px inset;
     width: 100px;
     border-radius: 3px;
-    
+
   }
   .other_browser{
     width: 100px;
@@ -110,7 +110,7 @@ body{
     .other_browser{
       box-shadow: rgba(255, 255, 255, 0) 0 1px 0, rgba(0, 0, 0, 0.4) 0 1px 7px 0px inset;
     }
-  } 
+  }
   .feature_name{
     width: 250px;
   }
@@ -167,5 +167,26 @@ body{
     margin-left: 30px;
     color: #FFF;
     font-size: 14px;
+  }
+}
+
+////////////////////// START PAGE //////////////////////
+
+.browsers_name{
+  list-style: none;
+  padding: 3%;
+  .browser{
+    display: inline-block;
+    padding: 7px;
+    max-width: 175px;
+    margin: 2px;
+    background-color: #F0F;
+    opacity: 0.5;
+    border-radius: 5px;
+    &:hover{
+      background-color: #F0F;
+      opacity: 1;
+      box-shadow: 5px 5px 5px #898989;
+    }
   }
 }
