@@ -1,20 +1,23 @@
 require 'spec_helper'
 
 describe 'browser_comparator/startpage.html.haml' do
-  it "Page include string 'hahaha'" do
-  	render :template => "browser_comparator/startpage.html.haml"
-  	rendered.should have_content("hahaha")
-	end
-	it " Page should have selector '#test'" do
+	it "Page should have selector '#browser'" do
 		render
-		rendered.should have_selector("#test")
+		rendered.should have_selector(".browsers_name")
 	end
   it "test selector" do
     render 
-    rendered.should have_selector("td", :count => 4)
+    rendered.should have_selector("li", :count => 5)
   end
   it 'test link' do
     render
     rendered.should have_content(:a)
   end
+  it "infers the controller path" do
+    controller.request.path_parameters["controller"].should eq("browser_comparator")
+  end
+  it "infers the controller path" do
+    controller.request.path_parameters["action"].should eq("startpage")
+  end
+
 end
