@@ -119,14 +119,14 @@ end
 #OS VERSION.
 ###########
 
-versions_in_browsers = {"Windows 7" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Windows Vista" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Windows XP" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..8), "Opera" => (1..11)},
-                        "Mac OS Lion" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Mac OS Snow Leopard" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Mac OS Leopard" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Linux Ubuntu" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
-                        "Linux Autres" => {"Chrome" => (0..16), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)}
+versions_in_browsers = {"Windows 7" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Windows Vista" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Windows XP" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..8), "Opera" => (1..11)},
+                        "Mac OS Lion" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Mac OS Snow Leopard" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Mac OS Leopard" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Linux Ubuntu" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)},
+                        "Linux Autres" => {"Chrome" => (0..17), "Safari" => (1..5), "Firefox" => (0..9), "Internet Explorer" => (1..9), "Opera" => (1..11)}
                        }
 versions_in_browsers.each do |os, values|
   values.each do |browser, versions|
