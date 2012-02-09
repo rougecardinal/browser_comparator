@@ -238,8 +238,7 @@ min_versions_hash = {"Chrome" => 0, "Internet Explorer" => 1, "Opera" => 1, "Saf
 features_in_versions.each do |feature_name, browsers|
   merging_version_browser = min_versions_hash.merge browsers
   merging_version_browser.delete_if{|key, value| value == false}
-    
-  puts "#{merging_version_browser}"
+  
   feature = Feature.find_by_name(feature_name)
   merging_version_browser.each do |browser_name, min_version_number|
     
