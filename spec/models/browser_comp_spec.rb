@@ -9,7 +9,7 @@ describe 'BrowserFamily' do
   let(:featureVersion) { Factory.create(:featureVersion, :feature => feature, :version => version) }
  
   it " Create Factory / browser" do
-    browser.name.should == "name"
+    browser.name.should == "Firefox"
   end
 
   it "Create Factory / version" do
