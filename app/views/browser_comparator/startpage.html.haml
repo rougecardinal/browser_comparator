@@ -28,35 +28,7 @@
   = image_tag("IE_color.png")
 = link_to "See more", index_path
 
-
-//////////////// APRES LES TESTS ////////////////////
-
-/ %ul.browsers_name
-/   .browser
-/     %li
-/       FireFox
-/       %p
-/         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/   .browser
-/     %li
-/       Chrome
-/     %p
-/       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/   .browser
-/     %li
-/       Internet Explorer
-/     %p
-/       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/   .browser
-/     %li
-/       Safari
-/     %p
-/       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/   .browser
-/     %li
-/       Opera
-/     %p
-/       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-/ .coucou
-/   = image_tag("IE_color.png")
-/ = link_to "See more", index_path
+= @current_agent
+%br
+%br
+= request.env['HTTP_USER_AGENT']
