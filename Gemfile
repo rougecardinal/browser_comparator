@@ -6,10 +6,15 @@ gem 'rails', '3.1.3'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.6"
   gem 'sqlite3'
+end
+
+group :test do
+  gem "rspec-rails", "~> 2.6" 
   gem "factory_girl_rails", "~> 1.2"
+  gem 'spork'
   gem 'guard-rspec'
+  gem 'guard-spork'
   gem 'capybara'
 end
 
