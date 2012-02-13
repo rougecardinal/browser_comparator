@@ -35,15 +35,19 @@ body{
   position: relative;
 
   -webkit-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
   -webkit-box-shadow: 4px 4px 5px 1px #898989;
+  -moz-box-shadow: 4px 4px 5px 1px #898989;
   font-family: "Arial Narrow", "Consolas";
   background-color: #fff;
 }
 
 #header{
   -webkit-border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
   /*background-color: #FFDE00;*/
   background: -webkit-linear-gradient(top, #FFDE00 0%, #FFB600 100%);
+  background: -moz-linear-gradient(top, #FFDE00 0%, #FFB600 100%);
   height: 140px;
   margin-bottom: 40px;
   .title{
@@ -117,7 +121,9 @@ body{
   .category_name{
     /*text-shadow: 1px 1px 1px black;*/
     background: -webkit-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
+    background: -moz-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
     -webkit-box-shadow: 3px 3px 4px 1px #898989;
+    -moz-box-shadow: 3px 3px 4px 1px #898989;
     color: #9c1b22;
     border-radius: 3px;
     margin:{
@@ -127,6 +133,8 @@ body{
     &:hover{
       background: -webkit-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
       -webkit-box-shadow: 1px 1px 4px 1px #898989;
+      background: -moz-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
+      -moz-box-shadow: 1px 1px 4px 1px #898989;
       margin:{
         top: 6px;
         bottom: 1px;
@@ -150,12 +158,14 @@ body{
 
 #footer{
   -webkit-border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
   background-color: #3D3D3D;
   height: 100px;
   margin-top: 50px;
 
   .copyright{
     -webkit-border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
     margin-left: 32.5%;
     width: 30%;
     background: white;
