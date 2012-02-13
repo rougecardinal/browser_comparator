@@ -16,6 +16,7 @@ group :test do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :production do
