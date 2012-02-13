@@ -54,7 +54,8 @@ browsers_versions = {
               {name: "6", date_release: "2011/08/16"},
               {name: "7", date_release: "2011/09/27"},
               {name: "8", date_release: "2011/11/08"},
-              {name: "9", date_release: "2011/12/20"}],
+              {name: "9", date_release: "2011/12/20"},
+              {name: "10", date_release: "2012/02/10"}],
 "Chrome" => [{name: "0", date_release: "2008/09/02"},
                     {name: "1", date_release: "2008/12/11"},
                     {name: "2", date_release: "2009/05/24"},
@@ -239,10 +240,10 @@ min_versions_hash = {"Chrome" => 0, "Internet Explorer" => 1, "Opera" => 1, "Saf
 features_in_versions.each do |feature_name, browsers|
   merging_version_browser = min_versions_hash.merge browsers
   merging_version_browser.delete_if{|key, value| value == false}
-  
+
   feature = Feature.find_by_name(feature_name)
   merging_version_browser.each do |browser_name, min_version_number|
-    
+
     browser = BrowserFamily.find_by_name(browser_name)
     create_feature_in_version(browser, feature, min_version_number)
   end
