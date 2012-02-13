@@ -14,11 +14,12 @@ describe 'browser_comparator/startpage.html.haml' do
     render 
     rendered.should have_selector("li", :count => 5)
   end
+
   it 'test link' do
     render
     rendered.should have_content(:a)
-    
   end
+  
   it "infers the controller path" do
     controller.request.path_parameters["controller"].should eq("browser_comparator")
   end
