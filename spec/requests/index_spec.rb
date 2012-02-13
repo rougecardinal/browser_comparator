@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe 'Index' do
 
+  nb_browser = BrowserFamily.all.count
+
   before(:each) do
     @session = Capybara::Session.new(:selenium)
     Capybara.app_host = 'http://browser_comparator.dev'
@@ -19,6 +21,6 @@ describe 'Index' do
     @session.should have_selector('.other_browser', :text => "Chrome")
     @session.should have_selector('.other_browser', :text => "Internet Explorer")
 
-    @session.should have_css('th.other_browser', :count => 5)
+    @session.should have_css('th.other_browser', :count => nb_browser)
   end
 end
