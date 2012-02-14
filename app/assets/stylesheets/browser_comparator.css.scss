@@ -122,8 +122,8 @@ body{
     /*text-shadow: 1px 1px 1px black;*/
     background: -webkit-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
     background: -moz-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
-    -webkit-box-shadow: 3px 3px 4px 1px #898989;
-    -moz-box-shadow: 3px 3px 4px 1px #898989;
+    -webkit-box-shadow: 1px 1px 4px 1px #898989;
+    -moz-box-shadow: 1px 1px 4px 1px #898989;
     color: #9c1b22;
     border-radius: 3px;
     margin:{
@@ -132,9 +132,9 @@ body{
     }
     &:hover{
       background: -webkit-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
-      -webkit-box-shadow: 1px 1px 4px 1px #898989;
+      -webkit-box-shadow: 2px 2px 4px 1px #898989;
       background: -moz-linear-gradient(top, #D1E9F5 0%, #D1E9F5 100%);
-      -moz-box-shadow: 1px 1px 4px 1px #898989;
+      -moz-box-shadow: 3px 2px 4px 1px #898989;
       margin:{
         top: 6px;
         bottom: 1px;
