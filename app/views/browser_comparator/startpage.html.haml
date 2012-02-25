@@ -1,33 +1,18 @@
-%ul.browsers_name
-  .browser
-    %li
-      FireFox
-      %p
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  .browser
-    %li
-      Chrome
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  .browser
-    %li
-      Internet Explorer
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  .browser
-    %li
-      Safari
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  .browser
-    %li
-      Opera
-    %p
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-.coucou
-  = image_tag("IE_color.png")
-= link_to "See more", index_path
+%ul.browsers_list
+  - @browsers.each do |browser|
+    .browser
+      %li.list_image
+        = browser_image(browser.name)
+      %li.browser_name
+        = browser.name
+      %li
+        %p
+          = browser.description
+      .link
+        %li.link_society
+          = link_to "Site de #{browser.prod_society}", browser.link, target: '_blank'
 
 %br
+%p.see_more
+  = link_to "See more", index_path
 %br
-= request.env['HTTP_USER_AGENT']
