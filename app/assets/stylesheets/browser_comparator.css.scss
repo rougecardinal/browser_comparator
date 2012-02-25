@@ -6,8 +6,10 @@
 @mixin img_properties($browser_name){
   width: 80px;
   height: 80px;
+  display: inline-block;
+  float: left;
+  margin-left: 25px;
   background-image: url($browser_name+'_color.png');
-  position: absolute;
   background-repeat:no-repeat;
   &:hover{
     background-image: url($browser_name+'.png');
@@ -24,14 +26,12 @@
 ///////////////////////////////////////////////////
 
 body{
-  background-color: #5DC8CD;
+  background-color: #85B6C4;
 }
 
 #content{
   width: 1050px;
   margin: 40px auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
   position: relative;
 
   -webkit-border-radius: 10px 10px 10px 10px;
@@ -46,13 +46,13 @@ body{
   -webkit-border-radius: 10px 10px 0px 0px;
   -moz-border-radius: 10px 10px 0px 0px;
   /*background-color: #FFDE00;*/
-  background: -webkit-linear-gradient(top, #FFDE00 0%, #FFB600 100%);
-  background: -moz-linear-gradient(top, #FFDE00 0%, #FFB600 100%);
+  background: -webkit-linear-gradient(left, #1B1B1B 0%, #2E2E2E 100%);
+  background: -moz-linear-gradient(left, #1B1B1B 0%, #232222 100%);
   height: 140px;
   margin-bottom: 40px;
   .title{
     font-size: 290%;
-    text-shadow: 2px 2px 1px black;
+    text-shadow: 0px 0px 5px #000;
     position: relative;
     float: left;
     margin-left: 30px;
@@ -64,26 +64,25 @@ body{
     }
   }
   .images{
-    padding-top: 50px;
-    .img_firefox{
-      margin-left: 440px;
-      @include img_properties(Firefox);
-    }
-    .img_chrome{
-      margin-left: 544px;
-      @include img_properties(Chrome);
-    }
-    .img_ie{
-      margin-left: 654px;
-      @include img_properties(IE);
-    }
-    .img_safari{
-      margin-left: 760px;
-      @include img_properties(Safari);
-    }
-    .img_opera{
-      margin-left: 865px;
-      @include img_properties(Opera);
+    padding-top: 35px;
+    .list_image{
+      list-style: none;
+      .img_firefox{
+        @include img_properties(Firefox);
+      }
+      .img_chrome{
+        @include img_properties(Chrome);
+      }
+      .img_ie{
+        @include img_properties(Internet_Explorer);
+      }
+      .img_safari{
+        @include img_properties(Safari);
+      }
+      .img_opera{
+        @include img_properties(Opera);
+      }
+
     }
   }
 }
@@ -160,6 +159,8 @@ body{
   -webkit-border-radius: 0px 0px 10px 10px;
   -moz-border-radius: 0px 0px 10px 10px;
   background-color: #3D3D3D;
+  background: -webkit-linear-gradient(left, #C1C1C1 10%, #C1C1C1 120%);
+  background: -moz-linear-gradient(left, #3F606A 10%, #102227 120%);
   height: 100px;
   margin-top: 50px;
 
@@ -182,21 +183,48 @@ body{
 
 ////////////////////// START PAGE //////////////////////
 
-.browsers_name{
+.browsers_list{
   list-style: none;
   padding: 3%;
+  .browser_name{
+    font-size: 24px;
+    color: #102227;
+    text-shadow: 2px 2px 1px #588CBF;
+    text-align: center;
+  }
+  .list_image{
+    margin-left: 47.5px;
+  }
   .browser{
-    display: inline-block;
-    padding: 7px;
-    max-width: 175px;
+    display: inline-table;
+    clear: both;
+    padding:{
+      top: 40px;
+      bottom: 40px;
+      right: 7px;
+      left: 7px;
+    }
+    width: 175px;
+    height: 237px;
     margin: 2px;
-    background-color: #F0F;
-    opacity: 0.5;
+    opacity: 0.8;
     border-radius: 5px;
+    .link_society{
+      text-align: center;
+    }
     &:hover{
-      background-color: #F0F;
       opacity: 1;
-      box-shadow: 5px 5px 5px #898989;
+      background-color: #94B9C4;
+      box-shadow: 5px 5px 1px #898989;
+      .browser_name{
+        text-shadow: 2px 2px 1px #102227;
+        color: #FFF;
+      }
     }
   }
+}
+
+.see_more{
+  float: right;
+  padding-right: 40px;
 }
