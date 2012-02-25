@@ -23,11 +23,11 @@ end
 
 # Tableau de hashs avec les attributs de BrowserFamily
 browser_families_attributes = [
-  {name: "Firefox", prod_society: "Mozilla"},
-  {name: "Chrome", prod_society: "Google"},
-  {name: "Internet Explorer", prod_society: "Microsoft"},
-  {name: "Safari", prod_society: "Apple"},
-  {name: "Opera", prod_society: "Opera Software"}
+  {name: "Firefox", prod_society: "Mozilla", description: "Les nombreuses extensions qu'il propose font de lui un navigateur puissant et complet.", link: "http://www.mozilla.org/firefox"},
+  {name: "Chrome", prod_society: "Google", description: "Interface épurée, très rapide avec toute les fonctionnalitées que Google propose.", link: "http://www.google.com/chrome"},
+  {name: "Internet Explorer", prod_society: "Microsoft", description: "Navigateur complet, simple et qui ne cesse d'évoluer.", link: "http://www.microsoft.com/ie"},
+  {name: "Safari", prod_society: "Apple", description: "Safari, à l'image d'Apple, est innovant, complet et rapide.", link: "http://www.apple.com/safari/"},
+  {name: "Opera", prod_society: "Opera Software", description: "Rapidité, sécurité et accessibilité sont les maîtres mots pour définir ce navigateur", link: "http://www.opera.com/"}
 ]
 
 # Parcours du tableau et creation du browser s'il n'existe pas
