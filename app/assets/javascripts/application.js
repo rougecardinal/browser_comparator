@@ -15,6 +15,6 @@ $("#locale_name").live("change", function(){
 
 $(function(){
   $(".category_name").click(function(){
-    b = $(this).nextUntil(".category_name").toggle();
+    $(this).nextUntil(".category_name").toggle();
   });
 });
